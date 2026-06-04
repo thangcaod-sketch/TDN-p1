@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F7F3EA">
+<title>Ôn thi lớp 6 CLC · Knowledge Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F3EA;
+  --card: #FCFAF4;
+  --ink: #1F1A14;
+  --muted: #7A6856;
+  --soft-muted: #5C4A3D;
+  --border: rgba(120,90,60,0.12);
+  --border-strong: rgba(120,90,60,0.18);
+  --accent: #B8552E;
+  --green: #2D5A4F;
+  --green-soft: #E4EDE9;
+  --red: #B8552E;
+  --red-soft: #F4DDD5;
+  --blue: #3D4F8C;
+  --gold: #9B6B1E;
+}
+html, body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; min-height: 100vh; }
+body { background-image: radial-gradient(rgba(60,40,20,0.025) 1px, transparent 1px); background-size: 3px 3px; }
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.italic-display { font-style: italic; }
+.num { font-variant-numeric: tabular-nums; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+button:disabled { cursor: not-allowed; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+header.app-header { padding: 40px 0 32px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+.brand { text-align: left; }
+.brand-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 38px); font-weight: 600; font-style: italic; letter-spacing: -0.01em; }
+.brand-title .accent { color: var(--accent); }
+.brand-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); margin-top: 4px; }
+.nav-link { font-size: 14px; color: var(--soft-muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.nav-link:hover { color: var(--ink); }
+
+/* Cards */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 1px 0 rgba(120,90,60,0.06), 0 8px 22px -14px rgba(80,50,20,0.16); transition: transform 0.25s cubic-bezier(.2,.7,.3,1), box-shadow 0.25s; }
+.card.lift { cursor: pointer; }
+.card.lift:hover { transform: translateY(-2px); box-shadow: 0 4px 0 rgba(120,90,60,0.04), 0 16px 30px -14px rgba(80,50,20,0.22); }
+.card.disabled { opacity: 0.5; cursor: not-allowed; }
+.card.big { padding: 28px; }
+
+/* Overview row */
+.overview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 40px; }
+@media (max-width: 700px) { .overview-grid { grid-template-columns: 1fr; } }
+.ov-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--muted); }
+.ov-value { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; line-height: 1; margin: 8px 0 4px; font-variant-numeric: tabular-nums; }
+.ov-value.big { font-size: 52px; }
+.ov-sub { font-size: 13px; color: var(--accent); }
+
+/* Section title */
+.section-title { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 20px; }
+.section-title h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; }
+.section-meta { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); }
+
+/* Subject grid */
+.subject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+@media (max-width: 900px) { .subject-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .subject-grid { grid-template-columns: 1fr; } }
+.subject-card { display: block; width: 100%; text-align: left; }
+.sc-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.sc-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+.sc-info { flex: 1; }
+.sc-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; }
+.sc-meta { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 2px; }
+.sc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 14px; border-top: 1px solid var(--border); }
+.stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.stat-value { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.due-indicator { margin-top: 12px; font-size: 12px; display: flex; align-items: center; gap: 6px; }
+.due-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+/* Mastery ring */
+.ring { position: relative; }
+.ring svg { transform: rotate(-90deg); }
+.ring-circle-bg { fill: none; stroke: rgba(120,90,60,0.15); stroke-width: 4; }
+.ring-circle-fg { fill: none; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 0.6s ease; }
+.ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; }
+
+/* Action cards (home bottom) */
+.action-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 700px) { .action-grid { grid-template-columns: 1fr; } }
+.action-card { display: flex; align-items: center; gap: 16px; padding: 20px; }
+.action-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; flex-shrink: 0; }
+.action-text { flex: 1; }
+.action-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; }
+.action-sub { font-size: 13px; color: var(--muted); }
+.action-arrow { font-size: 22px; }
+
+/* Subject header */
+.subject-header { padding: 32px; border-radius: 24px; margin-bottom: 32px; box-shadow: 0 1px 0 rgba(120,90,60,0.06), 0 8px 22px -14px rgba(80,50,20,0.16); }
+.sh-flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+.sh-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 8px; }
+.sh-title { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; margin-bottom: 12px; }
+.sh-stats { display: flex; gap: 24px; font-size: 14px; color: var(--soft-muted); flex-wrap: wrap; }
+.sh-stats b { font-variant-numeric: tabular-nums; }
+
+/* Mode cards */
+.mode-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 700px) { .mode-grid { grid-template-columns: 1fr; } }
+.mode-card { position: relative; }
+.mode-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 8px; }
+.mode-title { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; }
+.mode-badge { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+.mode-desc { font-size: 14px; line-height: 1.5; color: var(--soft-muted); margin-bottom: 16px; min-height: 44px; }
+.mode-btn { padding: 9px 18px; border-radius: 10px; font-size: 14px; font-weight: 500; color: #FCFAF4; }
+.mode-btn:disabled { color: var(--muted); background: rgba(0,0,0,0.06) !important; }
+
+/* Quiz */
+.quiz-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; gap: 16px; flex-wrap: wrap; }
+.quiz-tags { display: flex; gap: 10px; align-items: center; }
+.tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+.tag-muted { color: var(--muted); padding: 0; background: transparent; letter-spacing: 0.15em; }
+.timer { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.quiz-counter { font-size: 14px; color: var(--soft-muted); font-variant-numeric: tabular-nums; }
+.progress-bar { height: 4px; background: rgba(120,90,60,0.15); border-radius: 4px; overflow: hidden; margin-bottom: 32px; }
+.progress-fill { height: 100%; transition: width 0.4s ease; }
+
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 22px; padding: 32px; margin-bottom: 20px; box-shadow: 0 1px 0 rgba(120,90,60,0.06), 0 8px 22px -14px rgba(80,50,20,0.16); }
+.q-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); margin-bottom: 10px; }
+.q-text { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 500; line-height: 1.35; }
+.q-image-desc { margin-top: 16px; padding: 14px 16px; border-radius: 12px; font-size: 13px; font-style: italic; }
+.q-note { margin-top: 8px; font-size: 13px; font-style: italic; color: var(--muted); }
+.img-search-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 18px; padding: 8px 14px;
+  background: rgba(60, 79, 140, 0.08);
+  color: var(--blue);
+  border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  border: 1px solid rgba(60, 79, 140, 0.18);
+}
+.img-search-btn:hover {
+  background: rgba(60, 79, 140, 0.14);
+  transform: translateY(-1px);
+}
+.img-search-btn span { font-size: 14px; }
+
+.options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+.option { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 14px; text-align: left; width: 100%; background: var(--card); border: 1px solid var(--border-strong); transition: transform 0.18s, background 0.18s, border-color 0.18s; }
+.option:not(:disabled):hover { transform: translateY(-1px); }
+.option-letter { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; flex-shrink: 0; background: rgba(120,90,60,0.1); color: var(--soft-muted); }
+.option-text { flex: 1; line-height: 1.4; }
+.option-note { font-size: 12px; font-style: italic; opacity: 0.75; margin-top: 3px; }
+.option-mark { font-size: 20px; }
+.option.selected { background: var(--card); border-color: var(--accent); }
+.option.selected .option-letter { background: var(--accent); color: #fff; }
+.option.correct { background: var(--green-soft); border-color: var(--green); color: var(--green); }
+.option.correct .option-letter { background: var(--green); color: #fff; }
+.option.wrong { background: var(--red-soft); border-color: var(--red); color: #8B3D24; }
+.option.wrong .option-letter { background: var(--red); color: #fff; }
+.option.dim { opacity: 0.5; }
+
+.feedback { margin-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.feedback-text { flex: 1; }
+.feedback-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; }
+.feedback-sub { font-size: 13px; color: var(--soft-muted); margin-top: 4px; }
+.btn-primary { padding: 11px 22px; border-radius: 12px; font-weight: 500; color: #FCFAF4; font-size: 14px; }
+
+/* Result view */
+.result-hero { text-align: center; padding: 32px 0; }
+.result-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); margin-bottom: 12px; }
+.result-score { font-family: 'Fraunces', serif; font-size: 80px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 8px; }
+.result-score-of { font-size: 0.4em; font-weight: 400; color: var(--muted); }
+.result-verdict { font-family: 'Fraunces', serif; font-style: italic; font-size: 26px; }
+.detail-list { padding: 0; }
+.detail-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(120,90,60,0.08); }
+.detail-row:last-child { border-bottom: none; }
+.detail-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+.detail-row .detail-text { flex: 1; font-size: 14px; line-height: 1.4; }
+.detail-row .detail-time { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.detail-meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Boss mode */
+.boss-stage { text-align: center; padding: 24px 0; }
+.boss-streak { font-family: 'Fraunces', serif; font-size: 120px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.boss-streak-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); margin-top: 8px; }
+.boss-target { font-family: 'Fraunces', serif; font-size: 16px; font-style: italic; color: var(--muted); margin-top: 4px; }
+.boss-lives { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.boss-heart { font-size: 24px; transition: opacity 0.3s; }
+.boss-heart.lost { opacity: 0.2; }
+
+/* Flashcards */
+.fc-topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 600px) { .fc-topic-grid { grid-template-columns: 1fr; } }
+.fc-topic { padding: 18px; }
+.fc-topic-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; }
+.fc-topic-meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.fc-stage { padding: 32px 0; }
+.fc-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 60px 40px; text-align: center; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 0 rgba(120,90,60,0.06), 0 8px 22px -14px rgba(80,50,20,0.16); margin: 24px 0; cursor: pointer; transition: transform 0.2s; }
+.fc-card:hover { transform: translateY(-2px); }
+.fc-front { font-family: 'Fraunces', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 600; }
+.fc-back { font-family: 'Fraunces', serif; font-size: clamp(24px, 4vw, 36px); font-style: italic; color: var(--accent); }
+.fc-hint { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-top: 16px; }
+.fc-rate { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+@media (max-width: 600px) { .fc-rate { grid-template-columns: repeat(2, 1fr); } }
+.fc-rate-btn { padding: 12px 8px; border-radius: 10px; font-size: 13px; font-weight: 500; border: 1px solid var(--border-strong); }
+.fc-rate-btn:hover { transform: translateY(-1px); }
+
+/* Weak / Stats lists */
+.list-row { padding: 14px 18px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; display: flex; gap: 14px; align-items: flex-start; }
+.lr-info { flex: 1; }
+.lr-meta { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+.lr-q { font-size: 14px; line-height: 1.4; margin-bottom: 8px; }
+.lr-stats { font-size: 12px; }
+
+/* Buttons */
+.btn-ghost { padding: 11px 22px; border-radius: 12px; background: var(--card); color: var(--ink); border: 1px solid var(--border-strong); font-size: 14px; font-weight: 500; }
+.btn-ghost:hover { background: rgba(0,0,0,0.02); }
+
+main { padding-bottom: 80px; }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.4s ease both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.empty-state { text-align: center; padding: 60px 0; }
+.empty-state h3 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; margin-bottom: 10px; }
+.empty-state p { color: var(--soft-muted); margin-bottom: 20px; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(31,26,20,0.55); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 100; animation: fadeIn 0.2s; }
+.modal { background: var(--card); border-radius: 20px; padding: 28px; max-width: 440px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.modal h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+.modal p { color: var(--soft-muted); margin-bottom: 20px; line-height: 1.5; }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.boss-config { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0; }
+.boss-opt { padding: 14px 8px; border-radius: 10px; background: var(--card); border: 1.5px solid var(--border-strong); font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; text-align: center; transition: all 0.2s; }
+.boss-opt.active { border-color: var(--accent); background: var(--red-soft); color: var(--accent); }
+.boss-opt-label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'DM Sans'; font-weight: 500; color: var(--muted); margin-top: 4px; }
+.boss-opt.active .boss-opt-label { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="app-header">
+    <button class="brand" id="home-link">
+      <div class="brand-title">Ôn thi <span class="accent">lớp 6 CLC</span></div>
+      <div class="brand-sub" id="brand-sub">Knowledge bank · 207 câu · 63 từ vựng · SRS · Google Images</div>
+    </button>
+    <button class="nav-link" id="back-link" style="display:none;">← Trang chủ</button>
+  </header>
+  <main id="app"></main>
+</div>
+
+<script>
+// ============================================================
+// DATA — embedded
+// ============================================================
+const QUESTIONS = [{"id":"q0001","e":1,"eq":1,"s":"science","q":"Which planet in our solar system is known as the \"Red Planet\"?","c":"B","o":[["A","Venus"],["B","Mars","sao Hỏa"],["C","Jupiter"],["D","Saturn"]]},{"id":"q0002","e":1,"eq":2,"s":"science","q":"What is the chemical symbol for water?","c":"C","o":[["A","Wo"],["B","Wa"],["C","H₂O"],["D","HO₂"]]},{"id":"q0003","e":1,"eq":3,"s":"geography","q":"In which continent is the Amazon rainforest primarily located?","c":"C","o":[["A","Africa"],["B","Asia"],["C","South America","Nam Mỹ"],["D","Australia"]]},{"id":"q0004","e":1,"eq":4,"s":"science","q":"What is the main gas that plants absorb from the atmosphere for photosynthesis?","c":"C","o":[["A","Oxygen"],["B","Nitrogen"],["C","Carbon Dioxide"],["D","Hydrogen"]]},{"id":"q0005","e":1,"eq":5,"s":"science","q":"Which of the following is a renewable source of energy?","c":"D","o":[["A","Coal"],["B","Oil"],["C","Natural Gas"],["D","Solar Power"]]},{"id":"q0006","e":1,"eq":6,"s":"geography","q":"What is the capital city of France?","c":"D","o":[["A","Berlin"],["B","Madrid"],["C","Rome"],["D","Paris"]]},{"id":"q0007","e":1,"eq":7,"s":"history","q":"Who painted the Mona Lisa?","c":"C","o":[["A","Vincent van Gogh"],["B","Pablo Picasso"],["C","Leonardo da Vinci"],["D","Claude Monet"]]},{"id":"q0008","e":1,"eq":8,"s":"geography","q":"What is the currency of Japan?","c":"C","o":[["A","Won"],["B","Yuan"],["C","Yen"],["D","Ringgit"]]},{"id":"q0009","e":1,"eq":9,"s":"science","q":"Which of the following is a primary color?","c":"C","o":[["A","Green"],["B","Orange"],["C","Blue"],["D","Purple"]]},{"id":"q0010","e":1,"eq":10,"s":"science","q":"What is the boiling point of water at standard atmospheric pressure?","c":"C","o":[["A","0°C"],["B","50°C"],["C","100°C"],["D","150°C"]]},{"id":"q0011","e":1,"eq":11,"s":"science","q":"Which of the following is a mammal?","c":"C","o":[["A","Butterfly"],["B","Lizard"],["C","Whale"],["D","Frog"]]},{"id":"q0012","e":1,"eq":12,"s":"geography","q":"What is the largest ocean on Earth?","c":"D","o":[["A","Atlantic Ocean"],["B","Indian Ocean"],["C","Arctic Ocean"],["D","Pacific Ocean"]]},{"id":"q0013","e":1,"eq":13,"s":"history","q":"Who wrote the play \"Romeo and Juliet\"?","c":"B","o":[["A","Charles Dickens"],["B","William Shakespeare"],["C","Jane Austen"],["D","Mark Twain"]]},{"id":"q0014","e":1,"eq":14,"s":"science","q":"What is the chemical symbol for gold?","c":"C","o":[["A","Go"],["B","Gd"],["C","Au"],["D","Ag"]]},{"id":"q0015","e":1,"eq":15,"s":"science","q":"Which of the following is a common symptom of the flu (influenza)?","c":"C","o":[["A","Increased appetite"],["B","Very low body temperature"],["C","Muscle aches and fever"],["D","Feeling extremely energetic"]]},{"id":"q0016","e":1,"eq":16,"s":"science","q":"What is the process by which plants make their own food?","c":"C","o":[["A","Respiration","Hô hấp"],["B","Digestion","Tiêu hóa"],["C","Photosynthesis","Quang hợp"],["D","Transpiration","Thoát hơi nước"]]},{"id":"q0017","e":1,"eq":17,"s":"science","q":"Which of the following is a greenhouse gas?","c":"D","o":[["A","Nitrogen"],["B","Oxygen"],["C","Carbon Monoxide"],["D","Methane","khí mê tan"]]},{"id":"q0018","e":1,"eq":18,"s":"science","q":"What is the name of the Earth's natural satellite?","c":"C","o":[["A","Europa"],["B","Titan"],["C","Moon"],["D","Ganymede"]]},{"id":"q0019","e":1,"eq":19,"s":"science","q":"What is the basic unit of heredity?","c":"C","o":[["C","Gene"],["D","Organ"]]},{"id":"q0020","e":1,"eq":20,"s":"science","q":"Which of the following is a common method of preserving food?","c":"C","o":[["A","Melting"],["B","Boiling"],["C","Freezing"],["D","Evaporating"]]},{"id":"q0021","e":2,"eq":1,"s":"science","q":"What is the process by which plants make their own food?","c":"B","o":[["A","Respiration"],["B","Photosynthesis"],["C","Transpiration"],["D","Digestion"]]},{"id":"q0022","e":2,"eq":2,"s":"science","q":"Which of the following is a state of matter?","c":"C","o":[["A","Energy"],["B","Light"],["C","Solid","Chất rắn"],["D","Sound"]]},{"id":"q0023","e":2,"eq":3,"s":"science","q":"What force pulls objects towards the center of the Earth?","c":"C","o":[["A","Magnetism","Lực từ"],["B","Friction","Lực ma sát"],["C","Gravity","Lực hấp dẫn / Lực hút"],["D","Electricity"]]},{"id":"q0024","e":2,"eq":4,"s":"science","q":"Which part of the human body pumps blood?","c":"C","o":[["A","Lungs"],["B","Brain"],["C","Heart"],["D","Stomach"]]},{"id":"q0025","e":2,"eq":5,"s":"science","q":"What is the chemical symbol for water?","c":"C","o":[["A","Wo"],["B","Wa"],["C","H₂O"],["D","HO₂"]]},{"id":"q0026","e":2,"eq":6,"s":"science","q":"What type of animal is a butterfly?","c":"C","o":[["A","Mammal","Động vật có vú"],["B","Bird"],["C","Insect"],["D","Reptile","Bò sát"]]},{"id":"q0027","e":2,"eq":7,"s":"science","q":"What is the main source of energy for the Earth?","c":"C","o":[["A","Moon"],["B","Stars"],["C","Sun"],["D","Wind"]]},{"id":"q0028","e":2,"eq":8,"s":"history","q":"Who was the first president of Vietnam?","c":"A","o":[["A","Ho Chi Minh"],["B","Le Duan"],["C","Ton Duc Thang"],["D","Vo Nguyen Giap"]]},{"id":"q0029","e":2,"eq":9,"s":"geography","q":"What is the capital city of Vietnam?","c":"C","o":[["A","Ho Chi Minh City"],["B","Da Nang"],["C","Hanoi"],["D","Hue"]]},{"id":"q0030","e":2,"eq":10,"s":"geography","q":"Which continent is Vietnam located in?","c":"B","o":[["A","Europe"],["B","Asia"],["C","Africa"],["D","South America"]]},{"id":"q0031","e":2,"eq":11,"s":"geography","q":"What is the name of the currency used in Vietnam?","c":"D","o":[["A","Dollar"],["B","Euro"],["C","Yen"],["D","Dong"]]},{"id":"q0032","e":2,"eq":12,"s":"life-skills","q":"What is a democracy?","c":"C","o":[["A","Rule by a king or queen"],["B","Rule by a small group of people"],["C","Rule by the people","Nhân dân làm chủ"],["D","Rule by religious leaders","Lãnh đạo tôn giáo"]]},{"id":"q0033","e":2,"eq":13,"s":"life-skills","q":"What should you do before crossing a busy street?","c":"B","o":[["A","Run quickly"],["B","Look left and right"],["C","Close your eyes"],["D","Talk on your phone"]]},{"id":"q0034","e":2,"eq":14,"s":"life-skills","q":"What is important for staying healthy?","c":"C","o":[["A","Eating only junk food"],["B","Not exercising"],["C","Eating balanced meals and exercising regularly"],["D","Sleeping very little"]]},{"id":"q0035","e":2,"eq":15,"s":"life-skills","q":"What should you do if there is a fire in your house?","c":"B","o":[["A","Hide under the bed"],["B","Shout loudly for help and leave quickly"],["C","Try to put it out yourself, no matter how big it is"],["D","Ignore it","Mặc kệ nó"]]},{"id":"q0036","e":2,"eq":16,"s":"life-skills","q":"What is the purpose of a traffic light?","c":"B","o":[["A","To make the city look colorful"],["B","To control the flow of traffic"],["C","To provide light at night"],["D","To show advertisements","Quảng cáo"]]},{"id":"q0037","e":2,"eq":17,"s":"life-skills","q":"What is the best way to save water at home?","c":"C","o":[["A","Leave the tap running while brushing your teeth"],["B","Take long showers"],["C","Fix leaky faucets"],["D","Use a lot of water for washing clothes"]]},{"id":"q0038","e":2,"eq":18,"s":"life-skills","q":"What should you do if you see someone fall and get hurt?","c":"C","o":[["A","Laugh at them"],["B","Ignore them and walk away"],["C","Offer help and call for an adult if needed"],["D","Pretend you didn't see anything"]]},{"id":"q0039","e":2,"eq":19,"s":"life-skills","q":"What is the importance of wearing a helmet when riding a bicycle?","c":"B","o":[["A","To look cool"],["B","To protect your head in case of a fall"],["C","To carry things"],["D","To make you go faster"]]},{"id":"q0040","e":2,"eq":20,"s":"life-skills","q":"What is a good way to show gratitude to someone who helps you?","c":"B","o":[["A","Forget about it quickly"],["B","Say \"thank you\""],["C","Ask for more help"],["D","Ignore their help"]]},{"id":"q0041","e":3,"eq":1,"s":"science","q":"What gas do humans primarily breathe in?","c":"B","o":[["A","Carbon dioxide"],["B","Oxygen"]]},{"id":"q0042","e":3,"eq":2,"s":"science","q":"Which of the following is a liquid?","c":"C","o":[["A","Ice","nước đá"],["B","Steam","hơi nước"],["C","Water"],["D","Rock"]]},{"id":"q0043","e":3,"eq":3,"s":"science","q":"What is the unit used to measure weight?","c":"C","o":[["A","Meter"],["B","Liter"],["C","Kilogram"],["D","Second"]]},{"id":"q0044","e":3,"eq":4,"s":"science","q":"Which organ in the human body helps us to think and remember?","c":"B","o":[["A","Lungs","phổi"],["B","Brain","não"],["C","Heart","tim"],["D","Liver","gan"]]},{"id":"q0045","e":3,"eq":5,"s":"science","q":"What is the chemical symbol for oxygen?","c":"B","o":[["A","Ox"],["B","O"],["C","O₂"],["D","Og"]]},{"id":"q0046","e":3,"eq":6,"s":"science","q":"What type of plant is a rose?","c":"C","o":[["A","Tree"],["B","Grass"],["C","Flower"],["D","Bush"]]},{"id":"q0047","e":3,"eq":7,"s":"science","q":"What is the natural satellite that orbits the Earth?","c":"C","o":[["A","Sun"],["B","Mars"],["C","Moon"],["D","Venus"]]},{"id":"q0048","e":3,"eq":8,"s":"history","q":"Who wrote the Vietnamese national anthem?","c":"B","o":[["A","Nguyen Du"],["B","Van Cao"],["C","Tran Hung Dao"],["D","Le Loi"]]},{"id":"q0049","e":3,"eq":9,"s":"geography","q":"What is the largest city in Vietnam by population?","c":"D","o":[["A","Hanoi"],["B","Da Nang"],["C","Hai Phong"],["D","Ho Chi Minh City"]]},{"id":"q0050","e":3,"eq":10,"s":"geography","q":"Which sea borders the east coast of Vietnam?","c":"B","o":[["A","South China Sea"],["B","East Sea"],["C","Pacific Ocean"],["D","Indian Ocean"]]},{"id":"q0051","e":3,"eq":11,"s":"geography","q":"What is the main religion practiced in Vietnam?","c":"D","o":[["A","Christianity","Ki-tô giáo"],["B","Islam","Hồi giáo"],["C","Buddhism","Phật giáo"],["D","Hinduism (Ấn Độ giáo) \\[Ghi chú bài làm chọn D nhưng có chữ viết tay phân tích Phật giáo/Ấn độ giáo\\]","Ấn Độ giáo"]]},{"id":"q0052","e":3,"eq":12,"s":"life-skills","q":"What is a republic?","c":"B","o":[["A","Rule by a single leader who inherits power"],["B","Rule by elected representatives of the people"],["C","Rule by religious law"],["D","Rule by the military"]]},{"id":"q0053","e":3,"eq":13,"s":"life-skills","q":"What should you do if you see a stranger offering you candy?","c":"B","o":[["A","Take it and say thank you"],["B","Politely refuse and tell a trusted adult"],["C","Run away immediately without saying anything"],["D","Ask for more candy"]]},{"id":"q0054","e":3,"eq":14,"s":"life-skills","q":"What is the importance of washing your hands regularly?","c":"B","o":[["A","To make your hands smell good"],["B","To prevent the spread of germs and diseases"],["C","To make your skin softer"],["D","To keep your nails clean"]]},{"id":"q0055","e":3,"eq":15,"s":"life-skills","q":"What should you do if you smell gas in your house?","c":"C","o":[["A","Light a match to check"],["B","Turn on all the electrical appliances"],["C","Open windows and doors and tell an adult immediately"],["D","Ignore it and hope it goes away"]]},{"id":"q0056","e":3,"eq":16,"s":"life-skills","q":"What does a red light at a traffic signal usually mean?","c":"C","o":[["A","Go straight"],["B","Turn left"],["C","Stop"],["D","Speed up"]]},{"id":"q0057","e":3,"eq":17,"s":"life-skills","q":"What is a good way to reduce plastic waste?","c":"C","o":[["A","Use more single-use plastic bags"],["B","Buy many bottled drinks"],["C","Use reusable bags and bottles"],["D","Throw plastic in the street"]]},{"id":"q0058","e":3,"eq":18,"s":"life-skills","q":"What should you do if you get lost in a public place?","c":"B","o":[["A","Panic and run around"],["B","Stay where you are and ask a uniformed person for help"],["C","Hide in a quiet corner"],["D","Try to find your way out by yourself"]]},{"id":"q0059","e":3,"eq":19,"s":"life-skills","q":"What is the purpose of wearing a seatbelt in a car?","c":"B","o":[["A","To make the car look nicer"],["B","To prevent serious injury in case of an accident"],["C","To make the ride more comfortable"],["D","To hang decorations"]]},{"id":"q0060","e":3,"eq":20,"s":"life-skills","q":"What is a good way to show gratitude to someone who helps you?","c":"B","o":[["A","Forget about it quickly"],["B","Say \"thank you\""],["C","Ask for more help"],["D","Ignore their help"]]},{"id":"q0061","e":4,"eq":1,"s":"science","q":"What's the process by which plants make their own food called?","c":"B","o":[["A","Respiration"],["B","Photosynthesis"],["C","Digestion"],["D","Circulation"]]},{"id":"q0062","e":4,"eq":2,"s":"life-skills","q":"Which part of a flower usually develops into a fruit?","c":"C","o":[["A","Petal","cánh hoa"],["B","Sepal","lá đài"],["C","Ovary","bầu nhụy"],["D","Stamen","nhị hoa"]]},{"id":"q0063","e":4,"eq":3,"s":"science","q":"What force pulls objects towards the center of the Earth?","c":"C","o":[["A","Magnetism"],["B","Electricity"],["C","Gravity"],["D","Friction"]]},{"id":"q0064","e":4,"eq":4,"s":"science","q":"What is the primary source of light and heat for the Earth?","c":"C","o":[["A","The Moon"],["B","Stars"],["C","The Sun"],["D","Planets"]]},{"id":"q0065","e":4,"eq":5,"s":"life-skills","q":"What are the three states of matter?","c":"C","o":[["A","Hot, cold, warm"],["B","Big, small, medium"],["C","Solid, liquid, gas"],["D","Heavy, light, soft"]]},{"id":"q0066","e":4,"eq":6,"s":"science","q":"Which of the following is NOT a mammal?","c":"C","o":[["A","Whale"],["B","Bat"],["C","Snake"],["D","Monkey"]]},{"id":"q0067","e":4,"eq":7,"s":"science","q":"What do we call animals that eat both plants and animals?","c":"C","o":[["A","Herbivores","ăn cỏ"],["B","Carnivores","ăn thịt"],["C","Omnivores","ăn tạp"],["D","Decomposers","phân hủy"]]},{"id":"q0068","e":4,"eq":8,"s":"science","q":"What gas do plants release into the air during photosynthesis?","c":"B","o":[["A","Carbon dioxide"],["B","Oxygen"],["C","Nitrogen"],["D","Hydrogen"]]},{"id":"q0069","e":4,"eq":9,"s":"science","q":"What is the process of water changing from a liquid to a gas called?","c":"C","o":[["A","Condensation","ngưng tụ"],["B","Precipitation","mưa"],["C","Evaporation","bay hơi"],["D","Freezing","đông đặc"]]},{"id":"q0070","e":4,"eq":10,"s":"science","q":"Which part of the human body pumps blood to all other parts?","c":"C","o":[["A","Lungs"],["B","Brain"],["C","Heart"],["D","Stomach"]]},{"id":"q0071","e":4,"eq":11,"s":"science","q":"What is the name of the planet we live on?","c":"C","o":[["A","Mars"],["B","Venus"],["C","Earth"],["D","Jupiter"]]},{"id":"q0072","e":4,"eq":12,"s":"life-skills","q":"What is the imaginary line that divides the Earth into the Northern Hemisphere and the Southern Hemisphere?","c":"A","o":[["A","Equator","Xích đạo \\- đường chia Bắc và Nam bán cầu"],["B","Prime Meridian","Kinh tuyến gốc"],["C","Tropic of Cancer","Chí tuyến Bắc"],["D","Tropic of Capricorn","Chí tuyến Nam"]]},{"id":"q0073","e":4,"eq":13,"s":"geography","q":"What is the capital city of the United States of America?","c":"C","o":[["A","New York"],["B","Los Angeles"],["C","Washington, D.C."],["D","Chicago"]]},{"id":"q0074","e":4,"eq":14,"s":"history","q":"Who was the first President of Vietnam?","c":"A","o":[["A","Ho Chi Minh"],["B","Le Duan"],["C","Ton Duc Thang"],["D","Truong Chinh"]]},{"id":"q0075","e":4,"eq":15,"s":"life-skills","q":"What is the highest mountain range in the world?","c":"C","o":[["A","Andes"],["B","Rockies"],["C","Himalayas"],["D","Alps"]]},{"id":"q0076","e":4,"eq":16,"s":"geography","q":"What is the name of the largest ocean on Earth?","c":"D","o":[["A","Atlantic Ocean"],["B","Indian Ocean"],["C","Arctic Ocean"],["D","Pacific Ocean"]]},{"id":"q0077","e":4,"eq":17,"s":"life-skills","q":"What is the primary language spoken in Vietnam?","c":"C","o":[["A","English"],["B","Chinese"],["C","Vietnamese"],["D","French"]]},{"id":"q0078","e":4,"eq":18,"s":"life-skills","q":"What should you do if you find something valuable that doesn't belong to you?","c":"B","o":[["A","Keep it without telling anyone"],["B","Try to find the owner or give it to a responsible adult"],["C","Sell it to get some money"],["D","Throw it away"]]},{"id":"q0079","e":4,"eq":19,"s":"life-skills","q":"What is it important to do before crossing a busy street?","c":"B","o":[["A","Close your eyes and run"],["B","Look left, look right, and look left again"],["C","Talk on your phone"],["D","Ride your bicycle quickly"]]},{"id":"q0080","e":4,"eq":20,"s":"life-skills","q":"What is the purpose of recycling?","c":"C","o":[["A","To make more trash"],["B","To waste natural resources"],["C","To conserve natural resources and reduce pollution"],["D","To make things more expensive"]]},{"id":"q0081","e":5,"eq":1,"s":"science","q":"What do plants need to grow?","c":"C","o":[["A","Only water"],["B","Only sunlight"],["C","Water, sunlight, and air"],["D","Only soil"]]},{"id":"q0082","e":5,"eq":2,"s":"science","q":"Which of the following is a solid?","c":"C","o":[["A","Juice"],["B","Milk"],["C","Table"],["D","Smoke"]]},{"id":"q0083","e":5,"eq":3,"s":"life-skills","q":"What unit is used to measure how hot or cold something is?","c":"C","o":[["A","Meter"],["B","Gram"],["C","Degree Celsius"],["D","Hour"]]},{"id":"q0084","e":5,"eq":4,"s":"life-skills","q":"Which part of your body helps you to see?","c":"C","o":[["A","Ears"],["B","Nose"],["C","Eyes"],["D","Mouth"]]},{"id":"q0085","e":5,"eq":5,"s":"life-skills","q":"What is the air that surrounds the Earth called?","c":"C","o":[["C","Atmosphere"],["D","Space"]]},{"id":"q0086","e":5,"eq":6,"s":"science","q":"What kind of animal is a butterfly?","c":"C","o":[["A","Mammal"],["B","Bird"],["C","Insect"],["D","Reptile"]]},{"id":"q0087","e":5,"eq":7,"s":"science","q":"What is the star at the center of our solar system?","c":"C","o":[["A","Moon"],["B","Earth"],["C","Sun"],["D","Mars"]]},{"id":"q0088","e":5,"eq":8,"s":"life-skills","q":"Who is known as the father of the Vietnamese nation?","c":"D","o":[["A","Ho Chi Minh \\[đánh dấu X\\]"],["D","Hung Kings"]]},{"id":"q0089","e":5,"eq":9,"s":"geography","q":"What is the capital city of Vietnam?","c":"C","o":[["A","Ho Chi Minh City"],["B","Da Nang"],["C","Hanoi"],["D","Hue"]]},{"id":"q0090","e":5,"eq":10,"s":"geography","q":"Which river is often called the \"Mekong River\"?","c":"C","o":[["A","Red River"],["B","Perfume River"],["C","Cuu Long River"],["D","Saigon River"]]},{"id":"q0091","e":5,"eq":11,"s":"life-skills","q":"What is a traditional long dress worn by Vietnamese women called?","c":"B","o":[["A","Kimono"],["B","Ao Dai"],["C","Sari"],["D","Hanbok"]]},{"id":"q0092","e":5,"eq":12,"s":"life-skills","q":"What is a democracy?","c":"C","o":[["A","Rule by a king or queen"],["B","Rule by a small group of wealthy people"],["C","Rule by the people, typically through voting"],["D","Rule by religious leaders"]]},{"id":"q0093","e":5,"eq":13,"s":"life-skills","q":"What should you do if a fire alarm rings in your school?","c":"C","o":[["A","Ignore it and stay in your classroom"],["B","Run around and shout"],["C","Follow your teacher's instructions and evacuate calmly"],["D","Hide under your desk"]]},{"id":"q0094","e":5,"eq":14,"s":"life-skills","q":"Why is it important to drink enough water every day?","c":"B","o":[["A","To make you taller"],["B","To help your body work properly"],["C","To make your hair longer"],["D","To make your clothes cleaner"]]},{"id":"q0095","e":5,"eq":15,"s":"life-skills","q":"What should you do if you see someone fall and hurt themselves?","c":"C","o":[["A","Laugh at them"],["B","Pretend you didn't see"],["C","Tell a grown-up or offer help if it's safe"],["D","Run away"]]},{"id":"q0096","e":5,"eq":16,"s":"life-skills","q":"What does a green light at a traffic signal usually mean?","c":"B","o":[["A","Stop"],["B","Go straight"],["C","Turn right"],["D","Wait"]]},{"id":"q0097","e":5,"eq":17,"s":"science","q":"What is a good way to save electricity at home?","c":"C","o":[["A","Leave all the lights on"],["B","Keep the TV on even when no one is watching"],["C","Turn off lights and appliances when you're not using them"],["D","Open the refrigerator door for a long time"]]},{"id":"q0098","e":5,"eq":18,"s":"life-skills","q":"What should you do if you see someone being bullied?","c":"C","o":[["A","Join in the bullying"],["B","Ignore it and walk away"],["C","Tell a trusted adult or try to help safely"],["D","Record it on your phone and share it"]]},{"id":"q0099","e":5,"eq":19,"s":"life-skills","q":"What is the purpose of wearing a helmet when riding a bicycle?","c":"B","o":[["A","To look cool"],["B","To protect your head from injury"],["C","To make you ride faster"],["D","To carry things"]]},{"id":"q0100","e":5,"eq":20,"s":"life-skills","q":"What is a polite way to ask for something?","c":"C","o":[["A","\"Give me that\\!\""],["B","\"I want that now\\!\""],["C","\"Please can I have that?\""],["D","\"That's mine\\!\""]]},{"id":"q0101","e":6,"eq":1,"s":"science","q":"Which of the following is NOT a mixture?","c":"C","o":[["A","The air that we breathe"],["B","Salt water"],["C","A bowl of salad \\[Ghi chú: bài đánh dấu chọn C nhưng đề hỏi NOT a mixture thì nước muối, không khí đều là hỗn hợp\\]"]]},{"id":"q0102","e":6,"eq":2,"s":"science","q":"Which two substances of the following form a solution?","c":"B","o":[["A","Oil and water"],["B","Salt and water"],["C","Sand and salt"],["D","Sand and water"]]},{"id":"q0103","e":6,"eq":3,"s":"science","q":"Which of the following sentences is FALSE?","c":"C","o":[["A","Solids can change directly into a gas without going through a liquid state."],["B","Temperature changes can occur in both physical and chemical processes."],["C","A solution is a mixture that we can distinguish the components using our bare eyes.","Không thể phân biệt bằng mắt thường"],["D","Filtration techniques do not cause chemical change."]]},{"id":"q0104","e":6,"eq":4,"s":"science","q":"Which of the following methods is the best way to separate and collect all the substances from a solution?","c":"A","o":[["A","Distillation","chưng cất"],["B","Deposition","lắng xuống"],["C","Evaporation","bay hơi"],["D","Filtration","lọc"]]},{"id":"q0105","e":6,"eq":5,"s":"science","q":"What is the simplest way to separate the mixture of oil and water?","c":"B","o":[["A","Distillation"],["B","Deposition"],["C","Evaporation"],["D","Filtration"]]},{"id":"q0106","e":6,"eq":6,"s":"science","q":"Which separation technique do the people in coastal areas use to collect salt from seawater?","c":"C","o":[["A","Distillation"],["B","Deposition"],["C","Evaporation"],["D","Filtration"]]},{"id":"q0107","e":6,"eq":7,"s":"science","q":"Which separation technique is this instrument used for?","c":"D","o":[["A","Distillation"],["B","Deposition"],["C","Evaporation"],["D","Sieving"]]},{"id":"q0108","e":6,"eq":8,"s":"science","q":"You have a mixture of iron, sand, and salt. How can you separate them?","c":"D","o":[["A","Use a magnet → add water and stir carefully → evaporate → filter"],["B","Filter → use a magnet → add water and stir carefully → evaporate"],["C","Evaporate → use a magnet → add water and stir carefully → filter"],["D","Use a magnet (nam châm) → add water and stir carefully → filter → evaporate","nam châm"]]},{"id":"q0109","e":6,"eq":1,"s":"geography","q":"Which countries border Vietnam on land?","c":"B","o":[["A","China in the north, Laos and Thailand in the west"],["B","China in the north, Laos and Cambodia in the west"],["C","Laos and Thailand in the north, China in the west"],["D","Laos and Cambodia in the north, China in the west"]]},{"id":"q0110","e":6,"eq":2,"s":"geography","q":"Which is NOT a municipality of Vietnam?","c":"A","o":[["A","Huế"],["B","Hà Nội"],["C","Hồ Chí Minh City"],["D","Cần Thơ"]]},{"id":"q0111","e":6,"eq":3,"s":"history","q":"Who composed the national anthem of Vietnam?","c":"C","o":[["A","Phạm Tuyên"],["B","Nam Cao"],["C","Văn Cao"],["D","Trịnh Công Sơn"]]},{"id":"q0112","e":6,"eq":4,"s":"geography","q":"What is the main climate type of Vietnam?","c":"A","o":[["A","Monsoon tropical climate","Khí hậu nhiệt đới gió mùa"],["B","Desert climate"],["C","Temperate climate"],["D","Polar climate"]]},{"id":"q0113","e":6,"eq":5,"s":"geography","q":"Which of the following islands or archipelagos' names in Vietnam respectively mean \"Bãi cát vàng\" and \"Bãi cát dài\"?","c":"D","o":[["A","Phú Quốc, Côn Đảo"],["B","Trường Sa, Hoàng Sa"],["C","Côn Đảo, Phú Quốc"],["D","Hoàng Sa, Trường Sa"]]},{"id":"q0114","e":6,"eq":6,"s":"geography","q":"Which region has the highest population in Vietnam?","c":"A","o":[["A","Red River Delta","Đồng bằng sông Hồng"],["B","Central Coast","Duyên hải miền trung"],["C","Central Highlands","Tây Nguyên"],["D","Southern plain","Đồng bằng nam bộ"]]},{"id":"q0115","e":7,"eq":1,"s":"life-skills","q":"When you scream to reach someone from afar, they probably cannot hear you because \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"C","o":[["A","they cannot see you"],["B","they do not know the direction of the sound"],["C","the sound becomes weaker as it travels"],["D","sound cannot travel through the air"]]},{"id":"q0116","e":7,"eq":2,"s":"life-skills","q":"Why do you often hear the echoes when you are in a cave?","c":"C","o":[["A","Animals hiding in the cave make sounds."],["B","You imagine them because it is dark and scary in a cave."],["C","The sound bounces back and forth because of the cave's structure."],["D","There are other sources of sound in the cave that make echoes."]]},{"id":"q0117","e":7,"eq":3,"s":"life-skills","q":"How does a sound insulator work?","c":"D","o":[["A","It does not let any particles get through."],["B","It removes dust from the air."],["C","It protects our ears from pointed objects."],["D","It prevents or reduces particle vibrations."]]},{"id":"q0118","e":7,"eq":4,"s":"life-skills","q":"Which of the following can produce light on their own?","c":"B","o":[["A","A mirror"],["B","A star"],["C","The Moon"],["D","All of the above"]]},{"id":"q0119","e":7,"eq":5,"s":"life-skills","q":"We can see an object because \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"B","o":[["A","the object absorbs the light"],["B","there is light coming from the light source to the object \\[Bài làm chọn B, ghi chú viết tay phân tích luồng ánh sáng\\]"],["C","there is light coming from the object to our eyes"],["D","the object reflects light coming from the light source"]]},{"id":"q0120","e":7,"eq":6,"s":"life-skills","q":"We can see a red object because \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"D","o":[["A","it absorbs the red light"],["B","it absorbs all the light"],["C","it reflects all the light to our eyes"],["D","it reflects the red light to our eyes"]]},{"id":"q0121","e":7,"eq":7,"s":"life-skills","q":"What is the right explanation for the black color of an object?","c":"B","o":[["A","It reflects all colors."],["B","It absorbs all colors."],["C","It reflects the black light."],["D","It absorbs the black light."]]},{"id":"q0122","e":7,"eq":8,"s":"science","q":"We set up the following experiment: a light bulb, a blocking object, and a screen. What happens to the shadow if we gradually move the light bulb closer to the blocking object?","c":"B","o":[["A","It remains the same."],["B","It gets bigger."],["C","It gets smaller."],["D","It disappears."]]},{"id":"q0123","e":7,"eq":1,"s":"life-skills","q":"Which legend mentions the origin of the Vietnamese?","c":"B","o":[["A","Bánh chưng, bánh giầy"],["B","Con Rồng cháu Tiên"],["C","Sự tích thành Cổ Loa"],["D","Thánh Gióng"]]},{"id":"q0124","e":7,"eq":2,"s":"geography","q":"In about the year of 700 B.C. (trước Công Nguyên), our country was called \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"A","o":[["A","Văn Lang"],["B","Âu Lạc"],["C","Đại Cổ Việt"],["D","Đại Việt"]]},{"id":"q0125","e":7,"eq":3,"s":"geography","q":"In 208 B.C., Thục Phán led the Âu Việt and Lạc Việt people to fight against the invaders from the North. He then founded the Âu Lạc country and was also called \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"B","o":[["A","Lạc Long Quân"],["B","An Dương Vương"],["C","Kinh Dương Vương"],["D","Hùng Vương"]]},{"id":"q0126","e":7,"eq":4,"s":"life-skills","q":"Triệu Đà was \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.","c":"C","o":[["A","a loyal adviser of An Dương Vương"],["B","An Dương Vương's son-in-law"],["C","an enemy of An Dương Vương and the Âu Lạc people"],["D","defeated by An Dương Vương and the Âu Lạc people"]]},{"id":"q0127","e":7,"eq":5,"s":"geography","q":"In which region of Vietnam do people find archeological evidence of the Funan kingdom?","c":"D","o":[["A","Northwest region"],["B","Red River delta"],["C","Central Highlands"],["D","Southern plain","bản đồ Nam Bộ"]]},{"id":"q0128","e":7,"eq":6,"s":"geography","q":"Which of the following is a heritage from the ancient country Champa?","c":"C","o":[["A","Đông Sơn drum"],["B","Cổ Loa citadel"],["C","Mỹ Sơn sanctuary"],["D","Hội An ancient town"]]},{"id":"q0129","e":8,"eq":1,"s":"science","q":"Which part of the plant transports water to the leaves and flowers?","c":"B","o":[["A","Root"],["B","Stem / rễ"],["C","Seed"],["D","Fruit"]]},{"id":"q0130","e":8,"eq":2,"s":"science","q":"What do plants need to carry out photosynthesis?","c":"D","o":[["A","Water"],["B","Sunlight"],["C","Carbon dioxide"],["D","All of the above"]]},{"id":"q0131","e":8,"eq":3,"s":"science","q":"Which part of the plant is responsible for making food?","c":"C","o":[["A","Flower"],["B","Buds"],["C","Leaves lá"],["D","Roots"]]},{"id":"q0132","e":8,"eq":4,"s":"science","q":"Which statement is FALSE?","c":"B","o":[["A","In respiration, plants use oxygen and release carbon dioxide."],["B","Respiration only occurs at night."],["C","Plants make their own food by photosynthesis."],["D","Plants can release water vapor through small holes on the leaf surfaces."]]},{"id":"q0133","e":8,"eq":5,"s":"science","q":"Why do plants need water?","c":"C","o":[["A","To absorb nutrients from soil."],["B","To carry out photosynthesis."],["C","To hold up the stem."],["D","All of the above."]]},{"id":"q0134","e":8,"eq":6,"s":"science","q":"Nam planted some beans in a bowl. After five days, Nam noticed that the plants had become thin with long stems, and their leaves had turned yellow. What was the main reason?","c":"B","o":[["A","He forgot to water the plants."],["B","He placed the plants in the dark."],["C","He used too little soil."],["D","He covered the plants with a bag with no air inside."]]},{"id":"q0135","e":8,"eq":7,"s":"science","q":"Which plant is more difficult to pull out? Why?","c":"B","o":[["A","Plant A because plant A is healthier"],["B","Plant A because the roots of plant A are more spread out"],["C","Plant B because plant B is taller"],["D","Plant B because the roots of plant B grow deeper into the ground"]]},{"id":"q0136","e":8,"eq":8,"s":"science","q":"Which of the following statements is true about photosynthesis and respiration in plants?","c":"B","o":[["A","Photosynthesis happens only at night, while respiration happens only during the day."],["B","Photosynthesis happens in the day, producing oxygen and sugar, while respiration happens both day and night, releasing carbon dioxide and water."],["C","Both photosynthesis and respiration happen only in the leaves."],["D","Plants only need photosynthesis to survive; respiration is not necessary."]]},{"id":"q0137","e":8,"eq":1,"s":"history","q":"Who led the Lam Sơn revolt against the Ming?","c":"C","o":[["A","Trần Hưng Đạo"],["B","Lê Đại Hành"],["C","Lê Lợi"],["D","Nguyễn Trãi"]]},{"id":"q0138","e":8,"eq":2,"s":"history","q":"Who is the author of “Bình Ngô đại cáo”, which is considered a Declaration of Independence of our country?","c":"C","o":[["A","Trần Hưng Đạo"],["B","Lê Lợi"],["C","Nguyễn Trãi"],["D","Hồ Chí Minh"]]},{"id":"q0139","e":8,"eq":3,"s":"history","q":"Who is one of the main authors of “Đại Việt sử ký toàn thư”, which shows the historical events of our country from Hùng kings to the Later Lê dynasty?","c":"A","o":[["A","Ngô Sĩ Liên"],["B","Lê Lợi"],["C","Lê Thánh Tông"],["D","Nguyễn Trãi"]]},{"id":"q0140","e":8,"eq":4,"s":"history","q":"In 1802, Nguyễn Phúc Ánh ascended to the throne and established the Nguyễn Dynasty. What was his reign title?","c":"A","o":[["A","Gia Long"],["B","Minh Mạng"],["C","Thiệu Trị"],["D","Tự Đức"]]},{"id":"q0141","e":8,"eq":5,"s":"history","q":"Hàm Nghi was a young patriotic king who issued the “Cần Vương” edict, together with Tôn Thất Thuyết, to lead the resistance against the French. How old was Hàm Nghi when he became king?","c":"B","o":[["A","12 years old"],["B","13 years old"],["C","14 years old"],["D","15 years old"]]},{"id":"q0142","e":8,"eq":6,"s":"geography","q":"Nguyễn Trường Tộ was known for his intelligence and diligence, earning him the nickname “Trạng Tộ”. With the desire to strengthen the country, he sent many petitions suggesting reforms. Which of the following is included in his proposals?","c":"D","o":[["A","Expanding diplomatic relations"],["B","Sending people to study Western technology"],["C","Opening schools for shipbuilding and gun manufacturing"],["D","All of the above"]]},{"id":"q0143","e":9,"eq":1,"s":"science","q":"What is the main function of flowers?","c":"C","o":[["A","To protect the seeds and help with seed dispersal"],["B","To produce new plants"],["C","To be the reproductive organ and produce seeds"],["D","To make food for the plants"]]},{"id":"q0144","e":9,"eq":2,"s":"life-skills","q":"Which is NOT a natural way of pollination?","c":"C","o":[["A","Insect pollination"],["B","Self-pollination"],["C","Hand-pollination"],["D","Wind pollination"]]},{"id":"q0145","e":9,"eq":3,"s":"science","q":"Which of the following plants can grow from its stems?","c":"D","o":[["A","Potato"],["B","Rose"],["C","Bamboo"],["D","All of the above"]]},{"id":"q0146","e":9,"eq":4,"s":"life-skills","q":"In which part of the flower is pollen stored?","c":"A","o":[["A","Anther"],["B","Ovary"],["C","Filament"],["D","Petal"]]},{"id":"q0147","e":9,"eq":5,"s":"life-skills","q":"Which of the following is the female part of a flower?","c":"B","o":[["A","Petal"],["B","Ovary"],["C","Sepal"],["D","Stamen"]]},{"id":"q0148","e":9,"eq":6,"s":"science","q":"If a flower's ovary turns into a fruit, what process has just occurred?","c":"C","o":[["A","Pollination"],["B","Germination"],["C","Fertilization"],["D","Seed dispersal"]]},{"id":"q0149","e":9,"eq":7,"s":"life-skills","q":"The diagram shows the parts of a flower. Where must pollen land to pollinate the flower?","c":"D","o":[["A","Anther"],["B","Ovule"],["C","Ovary"],["D","Stigma"]]},{"id":"q0150","e":9,"eq":8,"s":"science","q":"Why is seed dispersal important for plant survival and growth?","c":"B","o":[["A","It ensures that seeds are planted in the same spot as the parent plant."],["B","It increases the chance of new plants growing far from the parent plant, reducing competition."],["C","It is necessary for pollination and fertilization to happen."],["D","It allows only large seeds to develop into new plants."]]},{"id":"q0151","e":9,"eq":1,"s":"history","q":"On which date is the anniversary of the August Revolution celebrated?","c":"C","o":[["A","2nd September"],["B","2nd August"],["C","19th August"],["D","12th August"]]},{"id":"q0152","e":9,"eq":2,"s":"life-skills","q":"Where did Hồ Chí Minh President read The Vietnam's Declaration of Independence?","c":"B","o":[["A","Nam Đàn, Nghệ An"],["B","Ba Đình, Hà Nội"],["C","Huế, Thừa Thiên – Huế"],["D","Hương Khê, Hà Tĩnh"]]},{"id":"q0153","e":9,"eq":3,"s":"history","q":"On the afternoon of August 30, 1945, a Vietnamese king famously declared “làm dân một nước độc lập hơn làm vua một nước nô lệ”. Who is this king?","c":"A","o":[["A","King Bảo Đại"],["B","King Tự Đức"],["C","King Hàm Nghi"],["D","King Khải Định"]]},{"id":"q0154","e":9,"eq":4,"s":"life-skills","q":"“... Anh luôn luôn tiến tiến đi theo cờ quân xâm lăng Anh xông pha chốn khắp chốn đi tuyên truyền trong nhân dân Kim Đồng tên anh muốn thuở không mờ Kim Đồng tên anh lừng lẫy chiến khu.” (Song Kim Đồng – Phong Nhã) What is the real name of the character “Kim Đồng” mentioned in the song?","c":"A","o":[["A","Nông Văn Dền"],["B","Trần Quốc Toản"],["C","Phan Đình Giót"],["D","Trần Văn Ơn"]]},{"id":"q0155","e":9,"eq":5,"s":"geography","q":"Shown in the image is the stone table where President Ho Chi Minh worked after returning to Vietnam in 1941\\. In which province is this historical table located?","c":"A","o":[["A","Cao Bằng"],["B","Lạng Sơn"],["C","Tuyên Quang"],["D","Bắc Cạn"]]},{"id":"q0156","e":9,"eq":6,"s":"life-skills","q":"Võ Nguyên Giáp, one of President Ho Chi Minh's most notable disciples, founded the Vietnam Propaganda Liberation Army. How old was Võ Nguyên Giáp when he was appointed the first General of the Vietnam People's Army?","c":"D","o":[["A","33 years old"],["B","34 years old"],["C","36 years old"],["D","37 years old"]]},{"id":"q0157","e":10,"eq":1,"s":"science","q":"A boy's voice is getting deeper, and he is growing taller. These are some signs that he is going through puberty. At which stage of the human growth timeline is he?","c":"C","o":[["A","Old age"],["B","Childhood"],["C","Adolescence"],["D","Adulthood"]]},{"id":"q0158","e":10,"eq":2,"s":"science","q":"Which of the following foods are the best source of fiber?","c":"B","o":[["A","White rice"],["B","Apple with skin"],["C","Chicken breast"],["D","Orange juice."]]},{"id":"q0159","e":10,"eq":3,"s":"science","q":"Why do people need to add soil around the base of plants in agriculture?","c":"B","o":[["A","To harm the plant and slow its growth."],["B","To help the plant absorb more nutrients."],["C","To remove the plant from the soil."],["D","To change the color of the leaves."]],"img":"Hình một người đang dùng tay vun/thêm đất quanh gốc cây non."},{"id":"q0160","e":10,"eq":4,"s":"science","q":"The handles of cooking pots are usually made from wood or plastic. Why are these materials used?","c":"A","o":[["A","Because they do not let heat pass through easily."],["B","Because they melt when heated."],["C","Because they are heavy and difficult to hold."],["D","Because they conduct heat very well."]]},{"id":"q0161","e":10,"eq":5,"s":"science","q":"Peter conducts an experiment as shown in the image below. When the holes are perfectly lined up, he can see the light from the candle through them. What is Peter trying to prove?","c":"B","o":[["A","Light can bend around objects."],["B","Light travels in a straight line."],["C","Cardboard is an opaque object."],["D","Light stops when it hits an object."]],"img":"Một cây nến được đặt phía sau nhiều tấm bìa/các hộp có lỗ tròn. Các lỗ tròn được xếp thẳng hàng để ánh sáng từ nến truyền qua."},{"id":"q0162","e":10,"eq":6,"s":"science","q":"A student has three different containers, labeled A, B, and C.","c":"C","o":[["A","70 cm³"],["B","162 cm³"],["C","123 cm³"],["D","109 cm³"]],"img":"* Container A: bình thấp, miệng vừa.  \n* Container B: khay/bình rất thấp, miệng rộng nhất.  \n* Container C: bình cao, miệng nhỏ nhất."},{"id":"q0163","e":10,"eq":7,"s":"history","q":"During the Subsidy period, Vietnamese people used stamps to buy daily essentials. Which of the following was used to get rice?","c":"D","o":[["A","Tem đường 100 gam, năm 1985\\."],["B","Phiếu cung cấp thịt cơ động, một kilôgam thịt."],["C","Tem thịt 500 gam, năm 1977\\."],["D","Phiếu gạo năm mươi kilô."]]},{"id":"q0164","e":10,"eq":8,"s":"history","q":"The emblem in the center of the ASEAN flag represents the ten members and symbolizes their dream of friendship and solidarity. What is depicted on the emblem of the ASEAN flag?","c":"B","o":[["A","Bamboo stalks."],["B","Stalks of padi."],["C","A water pot."],["D","A paddy field."]],"img":"Lá cờ ASEAN có biểu tượng ở giữa là bó lúa màu trắng nằm trong vòng tròn."},{"id":"q0165","e":10,"eq":9,"s":"history","q":"What was the main reason for Ngô Quyền's military campaign in 938 AD?","c":"C","o":[["A","To make Vietnam larger."],["B","To punish the traitor (kẻ phản bội) and prepare to defend against a foreign invasion."],["C","To fight against the Nam Han dynasty."],["D","To establish a new dynasty in Vietnam."]]},{"id":"q0166","e":10,"eq":10,"s":"history","q":"Which historical event was mentioned in the song below? “Toàn dân Việt Nam đứng đều lên góp sức một ngày. Thề đem xương máu quyết lòng chiến đấu cho tương lai. Mười chín tháng Tám, khi quốc dân căm hờn kêu thét. Tiến lên cùng hô: “Mau diệt tan hết quân thù chung\\!”...” Mười chín Tháng Tám – Xuân Oanh","c":"B","o":[["A","The Vietnamese famine (nạn đói) of 1945\\."],["B","The victory of August Revolution."],["C","The victory of the Hồ Chí Minh Campaign."],["D","The Điện Biên Phủ victory in 1954\\."]]},{"id":"q0167","e":10,"eq":11,"s":"math","q":"I am thinking about a 4-digit number. It is an odd number greater than 6000\\. From left to right, the first digit and the last digit are the same. Knowing that the two digits in the middle are also the same and each of them is 1 more than the last digit, which number am I thinking?","c":"B","o":[["A","9889"],["B","7887"],["C","5665"],["D","6776"]]},{"id":"q0168","e":10,"eq":12,"s":"math","q":"In a factory, a machine working for 30 hours can produce 21.3 tons of metal items. How many tons of metal items can 10 machines working for 105 hours produce? Assume that every machine works at the same rate.","c":"B","o":[["A","7.455 tons"],["B","745.5 tons"],["C","14910 tons"],["D","298.2 tons"]]},{"id":"q0169","e":10,"eq":13,"s":"math","q":"5 identical rectangles, each with a perimeter of 55 cm, are arranged to form a big rectangle as shown below. If the perimeter of the big rectangle is 121 cm, what is the area of that big rectangle?","c":"C","o":[["A","812.5 cm²"],["B","162.5 cm²"],["C","907.5 cm²"],["D","181.5 cm²"]],"img":"Hình một hình chữ nhật lớn được ghép từ 5 hình chữ nhật nhỏ bằng nhau. Các hình chữ nhật nhỏ được sắp xếp liền nhau tạo thành một hình chữ nhật lớn."},{"id":"q0170","e":10,"eq":14,"s":"math","q":"In an art class, there are 5 children: 2 boys and 3 girls. The sum of the children's ages is 72\\. The 2 boys were born 3 years apart. Two girls are of the same age and each of them is 3 years younger than the oldest girl. Each of the 2 younger girls is also twice as old as the older boy. Find the difference in ages between the oldest child and the youngest child.","c":"A","o":[["A","15 years"],["B","10 years"],["C","5 years"],["D","20 years"]]},{"id":"q0171","e":10,"eq":15,"s":"english","q":"What does the sign on the right say?","c":"D","o":[["A","You must throw trash here."],["B","You must not throw trash here."],["C","You are not allowed to throw trash here."],["D","B and C are correct."]],"img":"Biển báo nhắc không được vứt rác tại khu vực đó."},{"id":"q0172","e":10,"eq":16,"s":"english","q":"Choose the correct word(s) to complete the following sentence: “It is extremely hard for me \\_\\_\\_\\_\\_\\_\\_\\_ English like a native speaker.”","c":"D","o":[["A","speak"],["B","speaking"],["C","to speaking"],["D","to speak"]]},{"id":"q0173","e":10,"eq":17,"s":"english","q":"Choose the words that fit the blank to make a meaningful sentence: “Mr. Henry and his son \\_\\_\\_\\_\\_\\_\\_\\_ breakfast outside. Every morning, they \\_\\_\\_\\_\\_\\_\\_\\_ their nutritious breakfast prepared by the greatest cook in the family, Mr. Henry's wife\\!”","c":"C","o":[["A","usually aren't eat / enjoy"],["B","doesn't usually eat / enjoy"],["C","don't usually eat / enjoy"],["D","didn't eat usually / enjoyed"]]},{"id":"q0174","e":10,"eq":18,"s":"vietnamese","q":"Chọn cặp kết từ để điền vào chỗ trống: “... tôi không phải là người tài giỏi nhất, ... tôi có sự kiên định và niềm tin rằng mình sẽ thực hiện được ước mơ.”","c":"B","o":[["A","Nếu... thì..."],["B","Tuy... nhưng..."],["C","Mặc dù... nên..."],["D","Không những... mà..."]]},{"id":"q0175","e":10,"eq":19,"s":"vietnamese","q":"Đại từ trong đoạn thơ sau là gì? “Ai phiêu bạt nơi chân trời góc biển Có gọi thầm tiếng Việt mỗi đêm khuya?”","c":"A","o":[["A","Ai"],["B","gọi"],["C","tiếng Việt"],["D","Có"]]},{"id":"q0176","e":10,"eq":20,"s":"vietnamese","q":"Chọn thành ngữ thích hợp điền vào chỗ trống trong câu sau: “Công ty mới của cậu ấy có đãi ngộ rất tốt, lại còn phù hợp với chuyên môn của cậu ta, thật đúng là...”","c":"D","o":[["A","mèo mù vớ cá rán"],["B","thọc gậy bánh xe"],["C","cháy nhà ra mặt chuột"],["D","chuột sa chĩnh gạo"]]},{"id":"q0177","e":11,"eq":1,"s":"science","q":"Which of the following body parts is NOT a part of the nervous system?","c":"C","o":[["A","Nerve"],["B","Brain"],["C","Kidney"],["D","Spinal cord"]]},{"id":"q0178","e":11,"eq":2,"s":"science","q":"Which of the following is NOT a property of water?","c":"C","o":[["A","Colourless"],["B","Odourless"],["C","Has a definite shape"],["D","Can dissolve some substances"]]},{"id":"q0179","e":11,"eq":3,"s":"science","q":"Which of the following is necessary for a light bulb to work in a simple electric circuit?","c":"C","o":[["A","An open switch"],["B","An empty battery"],["C","Electric current"],["D","Broken wires"]]},{"id":"q0180","e":11,"eq":4,"s":"science","q":"You have a mixture of pepper and salt. How can you separate and collect them?","c":"A","o":[["A","Add water and stir carefully → filter → evaporate"],["B","Add water and stir carefully → deposition → filter"],["C","Add water and stir carefully → deposition → evaporate"],["D","Add water and stir carefully → distillation"]]},{"id":"q0181","e":11,"eq":5,"s":"science","q":"Which of the following foods uses fungi during production?","c":"B","o":[["A","Cheese"],["B","Bread"],["C","Flan"],["D","Yogurt"]],"img":"Bốn hình thực phẩm gồm: A. Cheese, B. Bread, C. Flan, D. Yogurt"},{"id":"q0182","e":11,"eq":6,"s":"science","q":"Read the process for making white bean sprouts (giá đỗ màu trắng) and answer the question below. Step 1\\. Wash the beans and put them in water overnight (about 8 hours). Step 2\\. Wash the beans again after they have been in the water. Step 3\\. Put the beans in a jar. You can put the lid on the jar, or you can cover the top with a cloth. But make sure air can still go inside the jar. Step 4\\. Put the jar in a dark place. Step 5\\. Every night, take the beans out and wash them again. Then, put them back in the dark place. Step 6\\. After a few days, the beans will start to grow. They will become white bean sprouts. After the process, the white bean sprouts have white stems and yellow leaves. Why do they have those features?","c":"B","o":[["A","The beans are washed carefully."],["B","The beans are planted in a dark place."],["C","The beans are not applied any fertilizers."],["D","The beans are put in water overnight."]]},{"id":"q0183","e":11,"eq":7,"s":"geography","q":"Which of the following locations is NOT located in the Central Coast?","c":"C","o":[["A","Truong Son Mountain Range"],["B","Bach Ma Mountain Range"],["C","Hai Van Pass"],["D","Hoang Lien Son Mountain Range"]]},{"id":"q0184","e":11,"eq":8,"s":"geography","q":"Which of the following statements best explains why Antarctica (the Antarctic continent) has almost no human population despite its large size?","c":"B","o":[["A","It is too far from other continents, making travel impossible."],["B","The harsh climate with extreme cold and strong winds makes it a difficult place for people to live."],["C","The land is covered by deserts with no access to fresh water."],["D","It is too small to support a significant human population."]]},{"id":"q0185","e":11,"eq":9,"s":"history","q":"The photo below shows people lining up to buy fuel. Which period in Vietnam's history is this photo associated with?","c":"C","o":[["A","French Colonial Period (1858 – 1945)."],["B","War Against America Period (1954 – 1975)."],["C","Subsidy Period (1976 – 1986)."],["D","Đổi Mới Period (1986 – present)."]],"img":"Hình người dân xếp hàng dài trước cửa hàng “Lương dầu đốt số 12” để mua nhiên liệu trong thời bao cấp."},{"id":"q0186","e":11,"eq":10,"s":"math","q":"On Old McDonald's farm, 5 chickens eat 600 g of food each day. How much food is needed to feed 40 chickens in 10 days?","c":"D","o":[["A","42 000 g"],["B","36 000 g"],["C","24 000 g"],["D","48 000 g"]]},{"id":"q0187","e":11,"eq":11,"s":"math","q":"A bottle of oil was full at first. After Linh used 700 ml of oil from the bottle for cooking, it became 5/12 full. If the bottle is full of oil, how much oil does it hold?","c":"A","o":[["A","1200 ml"],["B","500 ml"],["C","1680 ml"],["D","720 ml"]]},{"id":"q0188","e":12,"eq":1,"s":"science","q":"Which of the following animals gives birth to live young instead of laying eggs?","c":"B","o":[["A","Hình con cá."],["B","Hình cá voi/cá heo đen trắng."],["C","Hình một loài cá."],["D","Hình con ếch."]]},{"id":"q0189","e":12,"eq":2,"s":"science","q":"Which material is both a good conductor of heat and electricity?","c":"C","o":[["A","Wood"],["B","Rubber"],["C","Copper"],["D","Glass"]]},{"id":"q0190","e":12,"eq":3,"s":"science","q":"What is the main function of organ X in the digestive system?","c":"C","o":[["A","To absorb nutrients from food and transfer them to the bloodstream."],["B","To store waste before it is removed from the body."],["C","To break down food using acids and enzymes before it moves to the small intestine."],["D","To produce saliva and start digesting food before it is swallowed."]],"img":"Sơ đồ hệ tiêu hóa người, mũi tên X chỉ vào dạ dày."},{"id":"q0191","e":12,"eq":4,"s":"science","q":"Karen created a diagram to represent the water cycle. However, some of the labels may be incorrect. Based on your understanding of the water cycle, how many INCORRECT labels are in the diagram?","c":null,"o":[["A","1"],["B","2"],["C","3"],["D","4"]],"img":"Sơ đồ vòng tuần hoàn nước gồm Mặt Trời, biển, núi, mây và các mũi tên chỉ quá trình bay hơi, ngưng tụ, mưa rơi, nước chảy về sông/biển. Một số nhãn trong sơ đồ bị đặt sai.","unanswered":true},{"id":"q0192","e":12,"eq":5,"s":"science","q":"What is the correct order of steps in making pickled mustard greens?","c":"C","o":[["A","(a) \\- (b) \\- (c) \\- (d)"],["B","(a) \\- (d) \\- (b) \\- (c)"],["C","(b) \\- (d) \\- (c) \\- (a)"],["D","(b) \\- (d) \\- (a) \\- (c)"]],"img":"Hình hai hũ dưa cải muối, bên trong có rau cải được ngâm trong nước muối.  "},{"id":"q0193","e":12,"eq":6,"s":"science","q":"Nancy did an experiment to see how different liquids affect eggshells. She used: three eggshell pieces (labeled 1, 2, and 3), two glass cups (A and B), a tray, vinegar and water.","c":"A","o":[["A","Eggshell 1, because vinegar made bubbles and softened the shell."],["B","Eggshell 2, because water soaked in and changed how it felt."],["C","Eggshell 3, because air made it look different."],["D","Eggshells 1 and 2, because both were in liquid and felt softer."]],"img":"Có hai cốc thủy tinh bên cốc A và B. Vỏ trứng số 1 nằm trong cốc A, vỏ trứng số 2 nằm trong cốc B, vỏ trứng số 3 đặt trên khay bên ngoài. Cốc A có giấm, cốc B có nước.  "},{"id":"q0194","e":12,"eq":7,"s":"geography","q":"This is the largest island in Vietnam. In 2021, this island became the first island city and is known as the \"Đảo Ngọc\" due to its many tourist attractions. What is the name of this island?","c":"C","o":[["A","Cát Bà"],["B","Cát Bầu"],["C","Phú Quốc"],["D","Phú Quý"]],"img":"Hình một hòn đảo du lịch có bờ biển cong, nước biển và núi rừng bao quanh."},{"id":"q0195","e":12,"eq":8,"s":"geography","q":"The image shows the three-border marker, jointly built by Vietnam, Laos, and Cambodia on a mountain peak 1,086 meters above sea level. This place marks both the starting point of the Vietnam-Cambodia border and the ending point of the Vietnam-Laos border. In which province is this three-border area located?","c":"D","o":[["A","Gia Lai"],["B","Lâm Đồng"],["C","Đắc Nông"],["D","Kon Tum"]],"img":"Hình cột mốc ba biên giới Việt Nam \\- Lào \\- Campuchia đặt trên đỉnh núi, phía sau là cảnh núi rừng."},{"id":"q0196","e":12,"eq":9,"s":"geography","q":"Arrange the world's oceans in order from largest to smallest: Pacific Ocean → (a) → (b) → (c) → Southern Ocean","c":"A","o":[["A","(a) Atlantic Ocean, (b) Indian Ocean, (c) Arctic Ocean"],["B","(a) Indian Ocean, (b) Atlantic Ocean, (c) Arctic Ocean"],["C","(a) Atlantic Ocean, (b) Southern Ocean, (c) Indian Ocean"],["D","(a) Indian Ocean, (b) Arctic Ocean, (c) Atlantic Ocean"]]},{"id":"q0197","e":12,"eq":10,"s":"history","q":"During the Tran Dynasty, a boy was famous for his intelligence. At the age of 13, he passed the royal examination and became the youngest \"Trạng Nguyên\" (first-place scholar) in Vietnam's history. When a Yuan Dynasty envoy challenged the Vietnamese court with a puzzle about threading a string through a spiral shell, the boy quickly solved it with a clever trick: \"Tích tịch tình tang Bắt con kiến vàng buộc chỉ ngang lưng Bên thì lấy giấy mà bưng Bên thì bôi mỡ kiến mừng kiến sang\" (Theo Mai Hồng, Các trạng nguyên nước ta, NXB Giáo dục, 1989\\) Who is this historical figure?","c":"B","o":[["A","Lê Quý Đôn"],["B","Nguyễn Hiền"],["C","Trần Quốc Tuấn"],["D","Mạc Đĩnh Chi"]]},{"id":"q0198","e":12,"eq":11,"s":"math","q":"Minh follows the instructions to finish the process below.","c":"C","o":[["A","125"],["B","134"],["C","670"],["D","170"]],"img":"Bắt đầu với số 16 → cộng 9 → nhân với 5 → kiểm tra \"divisible by 2?\". Nếu chia hết cho 2 thì kết thúc; nếu không chia hết cho 2 thì quay lại bước cộng 9 và tiếp tục quy trình.  "},{"id":"q0199","e":12,"eq":12,"s":"math","q":"Wesley is 15 years old and his sister, Brenda, is 7\\. In how many years will the sum of their ages be double what it is now?","c":"D","o":[["A","15 years"],["B","7 years"],["C","22 years"],["D","11 years"]]},{"id":"q0200","e":12,"eq":13,"s":"math","q":"In a Maths Competition, Khanh had to answer 30 questions. She earned 4 points for each correct answer and lost 1 point for each incorrect answer, while she had no points for each unanswered question. Given that she did not answer 5 questions and finished with a total score of 85 points, how many of her answers were incorrect?","c":"B","o":[["A","2"],["B","3"],["C","4"],["D","5"]]},{"id":"q0201","e":12,"eq":14,"s":"math","q":"Find the area of the shaded rectangle.","c":"D","o":[["A","36 m²"],["B","27 m²"],["C","45 m²"],["D","18 m²"]],"img":"Hình gồm ba hình chữ nhật đặt liền nhau theo hàng ngang, có cùng chiều cao.  "},{"id":"q0202","e":12,"eq":15,"s":"english","q":"What does the sign on the right say?","c":"B","o":[["A","You can drive as fast as you want."],["B","You must not drive faster than 40 km/h."],["C","You must not drive slower than 40 km/h."],["D","You can drive faster than 40 km/h."]],"img":"Biển báo giao thông hình tròn, viền đỏ, nền trắng ghi số 40, thể hiện giới hạn tốc độ tối đa 40 km/h."},{"id":"q0203","e":12,"eq":16,"s":"english","q":"Choose the best response to fill in the blank. Sarah: I want to buy a new dress for the party. Which one do you think looks better? Emily: \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_","c":"B","o":[["A","The blue long cotton dress."],["B","The long blue cotton dress."],["C","The cotton blue long dress."],["D","The blue cotton long dress."]]},{"id":"q0204","e":12,"eq":17,"s":"english","q":"Choose the word that fits the blank to make a meaningful sentence. The museum, \\_\\_\\_\\_\\_\\_\\_ many historical artifacts are displayed, attracts tourists from all over the world.","c":"B","o":[["A","which"],["B","where"],["C","who"],["D","when"]]},{"id":"q0205","e":12,"eq":18,"s":"vietnamese","q":"Các vế trong câu ghép sau có mối quan hệ gì? \"Phải chi tôi dành nhiều thời gian cho con Mực nhiều hơn thì nó đã không bỏ nhà ra đi.\"","c":"B","o":[["A","Nguyên nhân \\- kết quả"],["B","Giả thiết \\- kết quả"],["C","Tăng tiến"],["D","Tương phản"]]},{"id":"q0206","e":12,"eq":19,"s":"vietnamese","q":"Trong câu văn sau, dấu câu nào được dùng không chính xác? \"Vườn nhà tôi rộng đủ để mọi người – thí nghiệm – trồng cây này, cây nọ, kết quả là cây cối mọc lung tung.\" (Theo Phan Thị Vàng Anh, \"Cha tôi\", trong Truyện ngắn, NXB Trẻ, 2025\\)","c":null,"o":[["A","Dấu gạch ngang"],["B","Dấu phẩy"],["C","Dấu chấm"],["D","Không có dấu câu nào sai."]],"unanswered":true},{"id":"q0207","e":12,"eq":20,"s":"vietnamese","q":"Từ in đậm trong hai câu sau thuộc trường hợp nào sau đây? \\- Tôi thích thú nhìn con cá to tướng đang bị mắc kẹt trong mắt lưới. \\- Điều tôi tự hào nhất trên khuôn mặt mình là đôi mắt được thừa hưởng từ mẹ.","c":"B","o":[["A","Từ đồng âm"],["B","Từ nhiều nghĩa"],["C","Từ đồng nghĩa"],["D","Từ nhiều âm"]]}];
+const FLASHCARDS = [{"id":"v0001","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"mixture (n)","vi":"hỗn hợp"},{"id":"v0002","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"deposition (n)","vi":"sự lắng đọng"},{"id":"v0003","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"solution (n)","vi":"dung dịch"},{"id":"v0004","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"sieve (v)","vi":"sàng"},{"id":"v0005","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"homogeneous (adj)","vi":"đồng nhất"},{"id":"v0006","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"filtration (n)","vi":"sự lọc"},{"id":"v0007","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"technique (n)","vi":"kỹ thuật"},{"id":"v0008","e":6,"topic":"Mixtures & Solutions","subject":"science","en":"distillation (n)","vi":"sự chưng cất"},{"id":"v0009","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"municipality (n)","vi":"thành phố trực thuộc trung ương"},{"id":"v0010","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"temperate (adj)","vi":"ôn hòa"},{"id":"v0011","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"compose (v)","vi":"sáng tác"},{"id":"v0012","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"polar (adj)","vi":"thuộc về cực"},{"id":"v0013","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"national anthem","vi":"quốc ca"},{"id":"v0014","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"archipelago (n)","vi":"quần đảo"},{"id":"v0015","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"monsoon tropical","vi":"nhiệt đới gió mùa"},{"id":"v0016","e":6,"topic":"Vietnam — Đất nước","subject":"geography","en":"population (n)","vi":"dân số"},{"id":"v0017","e":7,"topic":"Energy — Phần 1","subject":"science","en":"vibrate (v)","vi":"dao động"},{"id":"v0018","e":7,"topic":"Energy — Phần 1","subject":"science","en":"transmit (v)","vi":"truyền"},{"id":"v0019","e":7,"topic":"Energy — Phần 1","subject":"science","en":"vibration (n)","vi":"sự dao động"},{"id":"v0020","e":7,"topic":"Energy — Phần 1","subject":"science","en":"transmission (n)","vi":"sự truyền"},{"id":"v0021","e":7,"topic":"Energy — Phần 1","subject":"science","en":"loudness (n)","vi":"âm lượng"},{"id":"v0022","e":7,"topic":"Energy — Phần 1","subject":"science","en":"reflect (v)","vi":"phản xạ"},{"id":"v0023","e":7,"topic":"Energy — Phần 1","subject":"science","en":"vacuum (n)","vi":"chân không"},{"id":"v0024","e":7,"topic":"Energy — Phần 1","subject":"science","en":"reflection (n)","vi":"sự phản xạ"},{"id":"v0025","e":7,"topic":"Energy — Phần 1","subject":"science","en":"sound insulator","vi":"vật cách âm"},{"id":"v0026","e":7,"topic":"Energy — Phần 1","subject":"science","en":"medium (n)","vi":"môi trường trường"},{"id":"v0027","e":7,"topic":"Energy — Phần 1","subject":"science","en":"absorb (v)","vi":"hấp thụ"},{"id":"v0028","e":7,"topic":"Energy — Phần 1","subject":"science","en":"block (v)","vi":"chắn"},{"id":"v0029","e":7,"topic":"Energy — Phần 1","subject":"science","en":"absorption (n)","vi":"sự hấp thụ"},{"id":"v0030","e":7,"topic":"Energy — Phần 1","subject":"science","en":"shadow (n)","vi":"cái bóng"},{"id":"v0031","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"legend (n)","vi":"truyền thuyết"},{"id":"v0032","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"archeological (adj)","vi":"thuộc về khảo cổ"},{"id":"v0033","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"enemy (n)","vi":"kẻ thù"},{"id":"v0034","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"evidence (n)","vi":"bằng chứng"},{"id":"v0035","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"defeat (v)","vi":"đánh bại"},{"id":"v0036","e":7,"topic":"Các nước Việt cổ","subject":"history","en":"ancient (adj)","vi":"cổ đại"},{"id":"v0037","e":8,"topic":"Plants — Phần 1","subject":"science","en":"chlorophyll (n)","vi":"chất diệp lục"},{"id":"v0038","e":8,"topic":"Plants — Phần 1","subject":"science","en":"photosynthesis (n)","vi":"sự quang hợp"},{"id":"v0039","e":8,"topic":"Plants — Phần 1","subject":"science","en":"dispersal (n)","vi":"sự phát tán"},{"id":"v0040","e":8,"topic":"Plants — Phần 1","subject":"science","en":"respiration (n)","vi":"sự hô hấp"},{"id":"v0041","e":8,"topic":"Plants — Phần 1","subject":"science","en":"disperse (v)","vi":"phát tán"},{"id":"v0042","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"Declaration of Independence (noun)","vi":"Tuyên ngôn Độc lập"},{"id":"v0043","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"resistance (noun)","vi":"kháng chiến"},{"id":"v0044","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"ascend (verb)","vi":"lên ngôi"},{"id":"v0045","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"petition (noun)","vi":"bản điều trần, kiến nghị, đề nghị"},{"id":"v0046","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"throne (noun)","vi":"ngai vàng, ngôi vua"},{"id":"v0047","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"reform (noun)","vi":"cải cách"},{"id":"v0048","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"reign title (noun)","vi":"niên hiệu"},{"id":"v0049","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"diplomatic relation","vi":"quan hệ ngoại giao"},{"id":"v0050","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"patriotism (adjective)","vi":"yêu nước"},{"id":"v0051","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"shipbuilding (noun)","vi":"đóng tàu"},{"id":"v0052","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"edict (noun)","vi":"chiếu chỉ, sắc lệnh"},{"id":"v0053","e":8,"topic":"Hậu Lê & Nguyễn","subject":"history","en":"manufacturing (noun)","vi":"sản xuất, chế tạo"},{"id":"v0054","e":9,"topic":"Plants — Phần 2","subject":"science","en":"reproduction (n)","vi":"sự sinh sản"},{"id":"v0055","e":9,"topic":"Plants — Phần 2","subject":"science","en":"pollination (n)","vi":"sự thụ phấn"},{"id":"v0056","e":9,"topic":"Plants — Phần 2","subject":"science","en":"pollen grain","vi":"hạt phấn"},{"id":"v0057","e":9,"topic":"Plants — Phần 2","subject":"science","en":"fertilization (n)","vi":"sự thụ tinh"},{"id":"v0058","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"anniversary (noun)","vi":"ngày kỷ niệm"},{"id":"v0059","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"invade (verb)","vi":"xâm lược"},{"id":"v0060","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"declare (verb)","vi":"công bố, tuyên bố"},{"id":"v0061","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"appoint (verb)","vi":"bổ nhiệm"},{"id":"v0062","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"president (noun)","vi":"chủ tịch"},{"id":"v0063","e":9,"topic":"Cách mạng tháng Tám","subject":"history","en":"liberation (noun)","vi":"giải phóng"}];
+
+
+// Build smart Google Images search URL for a question
+function imgSearchUrl(q) {
+  const correctOpt = q.o.find(o => o[0] === q.c);
+  const answerText = correctOpt ? correctOpt[1] : '';
+  // Strip note in parens, asterisks
+  const ans = answerText.replace(/\([^)]*\)/g, '').trim();
+  // Take short keywords from question (remove common stop words)
+  let qShort = q.q.replace(/[?\.,\'"!:;]/g, ' ');
+  // Remove generic stop phrases
+  qShort = qShort
+    .replace(/^(Which of the following|What is|Who is|Who was|Which|What|Where|When|Why|How)\s+/i, '')
+    .replace(/\b(the following|the|a|an|of|in|on|at|to|for|is|are|was|were|do|does|did|can|could)\b/gi, ' ')
+    .replace(/\s+/g, ' ').trim()
+    .slice(0, 80);
+  const query = (ans + ' ' + qShort).trim();
+  return 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(query);
+}
+
+const SUBJECTS = {
+  science:       { label: "Khoa học",          en: "Science",     color: "#2D5A4F", soft: "#E4EDE9", icon: "◐" },
+  math:          { label: "Toán & Logic",       en: "Math",        color: "#B8552E", soft: "#F4E4D7", icon: "△" },
+  history:       { label: "Lịch sử",            en: "History",     color: "#7A5230", soft: "#EFE3D0", icon: "▤" },
+  geography:     { label: "Địa lý",             en: "Geography",   color: "#4A6B3A", soft: "#E1EAD7", icon: "◇" },
+  english:       { label: "Tiếng Anh",          en: "English",     color: "#3D4F8C", soft: "#DEE3F0", icon: "Aa" },
+  vietnamese:    { label: "Tiếng Việt",         en: "Vietnamese",  color: "#8B2E2E", soft: "#F1DDDD", icon: "ư" },
+  "life-skills": { label: "Đời sống & XH",      en: "Life",        color: "#9B6B1E", soft: "#F2E5C6", icon: "✦" },
+};
+
+const MODES = [
+  { id: "practice", label: "Luyện tập",      desc: "Học liên tục, phản hồi ngay từng câu. Thích hợp khi mới bắt đầu." },
+  { id: "srs",      label: "Ôn theo SRS",     desc: "Chỉ hiện câu đến hạn ôn theo thuật toán spaced repetition." },
+  { id: "weak",     label: "Dò câu sai",      desc: "Tập trung vào những câu đã từng sai (tỷ lệ đúng < 60%)." },
+  { id: "test",     label: "Đề kiểm tra",     desc: "10 câu, đồng hồ 10 phút, không phản hồi cho đến hết. Mô phỏng đề thi." },
+  { id: "boss",     label: "Boss mode",       desc: "Trả lời đúng N câu liên tiếp để thắng. Sai 1 lần là mất 1 mạng. 3 mạng." },
+  { id: "flashcard",label: "Flashcard từ vựng", desc: "Học 63 từ vựng Anh-Việt theo 8 chủ đề từ Đề 6-9.", isFlashcard: true },
+];
+
+const DAY = 86400000;
+const STORAGE_KEY = "luyenthi-lop6-v1";
+
+// ============================================================
+// STATE & STORAGE
+// ============================================================
+let state = {
+  view: { name: "home" },
+  progress: { v: 1, qStats: {}, fcStats: {}, history: [] },
+};
+
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state.progress = JSON.parse(raw);
+  } catch (e) { console.warn("Load failed", e); }
+  if (!state.progress.fcStats) state.progress.fcStats = {};
+  if (!state.progress.history) state.progress.history = [];
+}
+function saveProgress() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress)); } catch (e) {}
+}
+
+function srsUpdate(stat, isCorrect) {
+  const s = { ease: 2.5, interval: 0, ...stat };
+  if (isCorrect) {
+    s.ease = Math.min(3.0, s.ease + 0.05);
+    s.interval = s.interval === 0 ? 1 : (s.interval < 1 ? 1 : Math.round(s.interval * s.ease));
+  } else {
+    s.ease = Math.max(1.3, s.ease - 0.25);
+    s.interval = 0.25;
+  }
+  s.dueAt = Date.now() + s.interval * DAY;
+  return s;
+}
+
+function recordAnswer(qId, isCorrect, durationMs) {
+  const cur = state.progress.qStats[qId] || { seen: 0, correct: 0, wrong: 0, totalMs: 0 };
+  const updated = {
+    ...cur,
+    seen: cur.seen + 1,
+    correct: cur.correct + (isCorrect ? 1 : 0),
+    wrong: cur.wrong + (isCorrect ? 0 : 1),
+    totalMs: cur.totalMs + durationMs,
+    lastMs: durationMs,
+    lastCorrect: isCorrect,
+    lastAt: Date.now(),
+  };
+  Object.assign(updated, srsUpdate({ ease: cur.ease, interval: cur.interval }, isCorrect));
+  state.progress.qStats[qId] = updated;
+  saveProgress();
+}
+
+function recordFlashcard(fcId, rating) {
+  // rating: again, hard, good, easy
+  const cur = state.progress.fcStats[fcId] || { seen: 0, ease: 2.5, interval: 0 };
+  const isCorrect = rating !== "again";
+  const map = { again: -0.3, hard: -0.05, good: 0.05, easy: 0.15 };
+  cur.ease = Math.max(1.3, Math.min(3.0, cur.ease + map[rating]));
+  if (rating === "again") cur.interval = 0.25;
+  else if (rating === "hard") cur.interval = Math.max(1, cur.interval * 1.2);
+  else if (rating === "good") cur.interval = cur.interval === 0 ? 1 : cur.interval * cur.ease;
+  else if (rating === "easy") cur.interval = cur.interval === 0 ? 3 : cur.interval * cur.ease * 1.3;
+  cur.interval = Math.round(cur.interval * 100) / 100;
+  cur.dueAt = Date.now() + cur.interval * DAY;
+  cur.seen += 1;
+  cur.lastRating = rating;
+  cur.lastAt = Date.now();
+  state.progress.fcStats[fcId] = cur;
+  saveProgress();
+}
+
+function recordSession(session) {
+  state.progress.history = [session, ...(state.progress.history || [])].slice(0, 50);
+  saveProgress();
+}
+
+function resetAll() {
+  state.progress = { v: 1, qStats: {}, fcStats: {}, history: [] };
+  saveProgress();
+  render();
+}
+
+// ============================================================
+// STATS HELPERS
+// ============================================================
+function answerableQuestions(subject) {
+  return QUESTIONS.filter(q => q.s === subject && q.c);
+}
+
+function computeSubjectStats(subject) {
+  const subjectQs = answerableQuestions(subject);
+  const total = subjectQs.length;
+  let seen = 0, correct = 0, wrong = 0, totalMs = 0, mastered = 0, dueNow = 0;
+  const now = Date.now();
+  for (const q of subjectQs) {
+    const s = state.progress.qStats[q.id];
+    if (!s) continue;
+    seen += 1;
+    correct += s.correct; wrong += s.wrong; totalMs += s.totalMs;
+    const ratio = s.correct / Math.max(1, s.correct + s.wrong);
+    if (s.seen >= 2 && ratio >= 0.8) mastered += 1;
+    if (s.dueAt && s.dueAt <= now) dueNow += 1;
+  }
+  const totalAns = correct + wrong;
+  return {
+    total, seen, correct, wrong, mastered, dueNow,
+    accuracy: totalAns > 0 ? correct / totalAns : 0,
+    avgSec: totalAns > 0 ? totalMs / 1000 / totalAns : 0,
+    masteryPct: total > 0 ? mastered / total : 0,
+  };
+}
+
+function weakQuestions(subject) {
+  return QUESTIONS.filter(q => {
+    if (!q.c) return false;
+    if (subject && q.s !== subject) return false;
+    const s = state.progress.qStats[q.id];
+    if (!s || s.seen === 0) return false;
+    const ratio = s.correct / Math.max(1, s.correct + s.wrong);
+    return ratio < 0.6 || s.lastCorrect === false;
+  }).sort((a, b) => state.progress.qStats[b.id].wrong - state.progress.qStats[a.id].wrong);
+}
+
+function dueQuestions(subject) {
+  const now = Date.now();
+  return QUESTIONS.filter(q => {
+    if (!q.c) return false;
+    if (subject && q.s !== subject) return false;
+    const s = state.progress.qStats[q.id];
+    if (!s) return true;
+    return !s.dueAt || s.dueAt <= now;
+  });
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function pickQuestionsForMode(mode, subject) {
+  if (mode === "weak") return shuffle(weakQuestions(subject));
+  if (mode === "srs") {
+    let pool = dueQuestions(subject);
+    if (pool.length === 0) pool = answerableQuestions(subject);
+    return shuffle(pool);
+  }
+  if (mode === "test") return shuffle(answerableQuestions(subject)).slice(0, 10);
+  if (mode === "boss") return shuffle(answerableQuestions(subject));
+  // practice
+  const all = answerableQuestions(subject);
+  const unseen = all.filter(q => !state.progress.qStats[q.id]);
+  const seen = all.filter(q => state.progress.qStats[q.id]);
+  return [...shuffle(unseen), ...shuffle(seen)];
+}
+
+function fmtPct(n) { return Math.round(n * 100) + "%"; }
+function fmtSec(n) { return n < 10 ? n.toFixed(1) + "s" : Math.round(n) + "s"; }
+function fmtTime(ts) {
+  const d = new Date(ts);
+  return d.toLocaleDateString("vi-VN") + " " + d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+// ============================================================
+// RENDER — view router
+// ============================================================
+function render() {
+  const app = document.getElementById("app");
+  const v = state.view;
+  document.getElementById("back-link").style.display = v.name === "home" ? "none" : "inline";
+  app.innerHTML = "";
+  let html = "";
+  if (v.name === "home") html = renderHome();
+  else if (v.name === "subject") html = renderSubject(v.subject);
+  else if (v.name === "quiz") html = renderQuiz();
+  else if (v.name === "result") html = renderResult(v.session);
+  else if (v.name === "weak") html = renderWeak();
+  else if (v.name === "stats") html = renderStats();
+  else if (v.name === "flashcard-home") html = renderFlashcardHome();
+  else if (v.name === "flashcard-stage") html = renderFlashcardStage();
+  else if (v.name === "boss-config") html = renderBossConfig(v.subject);
+  else if (v.name === "boss-stage") html = renderBossStage();
+  app.innerHTML = '<div class="fade-in">' + html + '</div>';
+  bindEvents();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function go(view) { state.view = view; render(); }
+
+// ============================================================
+// HOME
+// ============================================================
+function masteryRing(pct, color, size) {
+  size = size || 56;
+  const r = (size - 8) / 2;
+  const c = 2 * Math.PI * r;
+  const offset = c * (1 - pct);
+  return `<div class="ring" style="width:${size}px;height:${size}px">
+    <svg width="${size}" height="${size}">
+      <circle class="ring-circle-bg" cx="${size/2}" cy="${size/2}" r="${r}"/>
+      <circle class="ring-circle-fg" cx="${size/2}" cy="${size/2}" r="${r}" stroke="${color}" stroke-dasharray="${c}" stroke-dashoffset="${offset}"/>
+    </svg>
+    <div class="ring-label" style="color:${color}">${fmtPct(pct)}</div>
+  </div>`;
+}
+
+function renderHome() {
+  // Overall
+  let totCorrect = 0, totWrong = 0, totMs = 0, totMastered = 0, totQ = 0;
+  for (const subjKey of Object.keys(SUBJECTS)) {
+    const st = computeSubjectStats(subjKey);
+    totCorrect += st.correct; totWrong += st.wrong; totMastered += st.mastered; totQ += st.total;
+  }
+  const totalAns = totCorrect + totWrong;
+  for (const id in state.progress.qStats) totMs += state.progress.qStats[id].totalMs || 0;
+  const accuracy = totalAns > 0 ? totCorrect / totalAns : 0;
+  const avgSec = totalAns > 0 ? totMs / 1000 / totalAns : 0;
+  
+  const weakCount = weakQuestions(null).length;
+  const dueCount = dueQuestions(null).length;
+  
+  const subjectCards = Object.entries(SUBJECTS)
+    .map(([key, info]) => ({ key, info, stats: computeSubjectStats(key) }))
+    .filter(s => s.stats.total > 0)
+    .map(({ key, info, stats }) => `
+      <button class="card lift subject-card" data-action="subject" data-subject="${key}">
+        <div class="sc-head">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="sc-icon" style="background:${info.soft};color:${info.color}">${info.icon}</div>
+            <div class="sc-info">
+              <div class="sc-title">${info.label}</div>
+              <div class="sc-meta">${stats.total} câu · ${stats.seen} đã thấy</div>
+            </div>
+          </div>
+          ${masteryRing(stats.masteryPct, info.color, 52)}
+        </div>
+        <div class="sc-stats">
+          <div><div class="stat-label">Đúng</div><div class="stat-value" style="color:#2D5A4F">${stats.correct}</div></div>
+          <div><div class="stat-label">Sai</div><div class="stat-value" style="color:#B8552E">${stats.wrong}</div></div>
+          <div><div class="stat-label">Tốc độ</div><div class="stat-value" style="color:#3D4F8C">${stats.avgSec ? fmtSec(stats.avgSec) : "—"}</div></div>
+        </div>
+        ${stats.dueNow > 0 ? `<div class="due-indicator" style="color:${info.color}"><span class="due-dot" style="background:${info.color}"></span>${stats.dueNow} câu đến hạn ôn lại</div>` : ""}
+      </button>
+    `).join("");
+  
+  return `
+    <section class="overview-grid">
+      <div class="card big">
+        <div class="ov-label">Đã thuộc</div>
+        <div class="ov-value big">${totMastered}<span style="color:var(--muted);font-size:0.4em;font-weight:400"> / ${totQ}</span></div>
+        <div class="ov-sub" style="color:#2D5A4F">${fmtPct(totQ ? totMastered/totQ : 0)}</div>
+      </div>
+      <div class="card big">
+        <div class="ov-label">Độ chính xác</div>
+        <div class="ov-value">${totalAns ? fmtPct(accuracy) : "—"}</div>
+        <div class="ov-sub">${totalAns} lượt trả lời</div>
+      </div>
+      <div class="card big">
+        <div class="ov-label">Tốc độ TB</div>
+        <div class="ov-value">${totalAns ? fmtSec(avgSec) : "—"}</div>
+        <div class="ov-sub" style="color:#3D4F8C">mỗi câu</div>
+      </div>
+    </section>
+    
+    <div class="section-title">
+      <h2>Theo môn</h2>
+      <div class="section-meta">chọn để bắt đầu</div>
+    </div>
+    <div class="subject-grid">${subjectCards}</div>
+    
+    <div class="section-title">
+      <h2>Khác</h2>
+      <div class="section-meta">khu vực riêng</div>
+    </div>
+    <div class="action-grid">
+      <button class="card lift action-card${weakCount === 0 ? " disabled" : ""}" data-action="weak" ${weakCount === 0 ? "disabled" : ""}>
+        <div class="action-icon" style="background:#F4DDD5;color:#B8552E">✕</div>
+        <div class="action-text">
+          <div class="action-title">Khu vực câu hay sai</div>
+          <div class="action-sub">${weakCount > 0 ? weakCount + " câu cần dò lại" : "Chưa có câu sai nào"}</div>
+        </div>
+        <div class="action-arrow" style="color:#B8552E">→</div>
+      </button>
+      <button class="card lift action-card" data-action="flashcard">
+        <div class="action-icon" style="background:#F2E5C6;color:#9B6B1E">Aa</div>
+        <div class="action-text">
+          <div class="action-title">Flashcard từ vựng</div>
+          <div class="action-sub">63 từ vựng theo 8 chủ đề</div>
+        </div>
+        <div class="action-arrow" style="color:#9B6B1E">→</div>
+      </button>
+      <button class="card lift action-card" data-action="stats">
+        <div class="action-icon" style="background:#DEE3F0;color:#3D4F8C">≡</div>
+        <div class="action-text">
+          <div class="action-title">Thống kê & Lịch sử</div>
+          <div class="action-sub">${state.progress.history.length} phiên gần đây</div>
+        </div>
+        <div class="action-arrow" style="color:#3D4F8C">→</div>
+      </button>
+      <button class="card lift action-card" data-action="random">
+        <div class="action-icon" style="background:#E4EDE9;color:#2D5A4F">⚡</div>
+        <div class="action-text">
+          <div class="action-title">Tổng hợp ngẫu nhiên</div>
+          <div class="action-sub">10 câu mix từ tất cả môn</div>
+        </div>
+        <div class="action-arrow" style="color:#2D5A4F">→</div>
+      </button>
+    </div>
+  `;
+}
+
+// ============================================================
+// SUBJECT VIEW
+// ============================================================
+function renderSubject(subjKey) {
+  const info = SUBJECTS[subjKey];
+  const stats = computeSubjectStats(subjKey);
+  const weak = weakQuestions(subjKey).length;
+  const due = dueQuestions(subjKey).length;
+  const unseen = stats.total - stats.seen;
+  
+  const badge = (m) => {
+    if (m.id === "srs" && due > 0) return `${due} câu đến hạn`;
+    if (m.id === "weak" && weak > 0) return `${weak} câu`;
+    if (m.id === "practice" && unseen > 0) return `${unseen} câu mới`;
+    return null;
+  };
+  
+  const modeCards = MODES.filter(m => !m.isFlashcard).map(m => {
+    const b = badge(m);
+    const isBoss = m.id === "boss";
+    return `
+      <div class="card mode-card">
+        <div class="mode-head">
+          <div class="mode-title">${m.label}</div>
+          ${b ? `<div class="mode-badge" style="background:${info.soft};color:${info.color}">${b}</div>` : ""}
+        </div>
+        <p class="mode-desc">${m.desc}</p>
+        <button class="mode-btn" style="background:${info.color}" data-action="${isBoss?'boss-config':'start-quiz'}" data-mode="${m.id}" data-subject="${subjKey}">
+          Bắt đầu →
+        </button>
+      </div>
+    `;
+  }).join("");
+  
+  return `
+    <div class="subject-header" style="background:${info.soft};border:1px solid ${info.color}33">
+      <div class="sh-flex">
+        <div>
+          <div class="sh-eyebrow" style="color:${info.color}">${info.en}</div>
+          <h1 class="sh-title" style="color:${info.color}">${info.label}</h1>
+          <div class="sh-stats">
+            <div><b class="num">${stats.total}</b> câu</div>
+            <div><b class="num">${stats.seen}</b> đã thấy</div>
+            <div><b class="num">${stats.mastered}</b> thuộc</div>
+            ${stats.correct + stats.wrong > 0 ? `<div><b class="num">${fmtPct(stats.accuracy)}</b> chính xác</div>` : ""}
+          </div>
+        </div>
+        ${masteryRing(stats.masteryPct, info.color, 88)}
+      </div>
+    </div>
+    <div class="section-title">
+      <h2>Chọn chế độ luyện tập</h2>
+    </div>
+    <div class="mode-grid">${modeCards}</div>
+  `;
+}
+
+// ============================================================
+// QUIZ
+// ============================================================
+function startQuiz(mode, subject) {
+  const questions = pickQuestionsForMode(mode, subject);
+  if (questions.length === 0) {
+    alert("Không có câu hỏi phù hợp cho chế độ này.");
+    return;
+  }
+  state.session = {
+    mode, subject, questions, idx: 0,
+    selected: null, revealed: false,
+    answers: [], startTs: Date.now(), qStart: Date.now(),
+    isTest: mode === "test",
+    timeLeft: mode === "test" ? 600 : null,
+    timer: null,
+  };
+  if (state.session.isTest) {
+    state.session.timer = setInterval(() => {
+      state.session.timeLeft -= 1;
+      const el = document.getElementById("timer-display");
+      if (el) el.textContent = `⏱ ${Math.floor(state.session.timeLeft/60)}:${String(state.session.timeLeft%60).padStart(2,"0")}`;
+      if (state.session.timeLeft <= 0) { clearInterval(state.session.timer); finishQuiz(); }
+    }, 1000);
+  }
+  go({ name: "quiz" });
+}
+
+function renderQuiz() {
+  const s = state.session;
+  const info = SUBJECTS[s.subject];
+  const q = s.questions[s.idx];
+  const modeLabel = (MODES.find(m => m.id === s.mode) || {}).label || s.mode;
+  const progressPct = (s.idx + (s.revealed ? 1 : 0.5)) / s.questions.length;
+  
+  const optsHtml = q.o.map(o => {
+    const [letter, text, note] = o;
+    let cls = "option";
+    if (s.revealed) {
+      if (letter === q.c) cls += " correct";
+      else if (letter === s.selected) cls += " wrong";
+      else cls += " dim";
+    } else if (s.selected === letter) cls += " selected";
+    const mark = s.revealed ? (letter === q.c ? "✓" : (letter === s.selected ? "✕" : "")) : "";
+    return `
+      <button class="${cls}" data-action="pick" data-letter="${letter}" ${s.revealed ? "disabled" : ""} style="${s.selected === letter && !s.revealed ? `border-color:${info.color};background:${info.soft}` : ""}">
+        <div class="option-letter" ${s.selected === letter && !s.revealed ? `style="background:${info.color};color:#fff"` : ""}>${letter}</div>
+        <div class="option-text">${escapeHtml(text)}${note ? `<div class="option-note">(${escapeHtml(note)})</div>` : ""}</div>
+        ${mark ? `<div class="option-mark">${mark}</div>` : ""}
+      </button>
+    `;
+  }).join("");
+  
+  let feedback = "";
+  if (s.revealed) {
+    const isCorrect = s.selected === q.c;
+    const correctOpt = q.o.find(o => o[0] === q.c);
+    feedback = `
+      <div class="feedback">
+        <div class="feedback-text">
+          <div class="feedback-title" style="color:${isCorrect ? '#2D5A4F' : '#B8552E'}">${isCorrect ? "Chính xác!" : "Chưa đúng"}</div>
+          ${!isCorrect ? `<div class="feedback-sub">Đáp án đúng: <b>${q.c}</b>. ${escapeHtml(correctOpt ? correctOpt[1] : "")}</div>` : ""}
+        </div>
+        <button class="btn-primary" style="background:${info.color}" data-action="next-q">${s.idx === s.questions.length - 1 ? "Xem kết quả →" : "Câu tiếp →"}</button>
+      </div>
+    `;
+  }
+  
+  return `
+    <div class="quiz-top">
+      <div class="quiz-tags">
+        <span class="tag" style="background:${info.soft};color:${info.color}">${info.label}</span>
+        <span class="tag-muted">${modeLabel}</span>
+      </div>
+      <div style="display:flex;gap:18px;align-items:center">
+        ${s.isTest ? `<div class="timer" id="timer-display" style="color:${s.timeLeft < 60 ? '#B8552E' : 'inherit'}">⏱ ${Math.floor(s.timeLeft/60)}:${String(s.timeLeft%60).padStart(2,"0")}</div>` : ""}
+        <div class="quiz-counter">${s.idx + 1}/${s.questions.length}</div>
+        <button class="nav-link" data-action="exit-quiz">Thoát</button>
+      </div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="background:${info.color};width:${progressPct*100}%"></div></div>
+    <div class="question-card">
+      <div class="q-eyebrow">Đề ${q.e} · Câu ${q.eq}${!q.c ? " · ⚠ Đáp án chưa xác minh" : ""}</div>
+      <div class="q-text">${escapeHtml(q.q)}</div>
+      ${q.img ? `<div class="q-image-desc" style="background:${info.soft};color:${info.color}">📷 ${escapeHtml(q.img)}</div>` : ""}
+      ${q.n ? `<div class="q-note">(${escapeHtml(q.n)})</div>` : ""}
+      <a class="img-search-btn" href="${imgSearchUrl(q)}" target="_blank" rel="noopener">
+        <span>🔍</span> Xem hình minh hoạ trên Google
+      </a>
+    </div>
+    <div class="options-grid">${optsHtml}</div>
+    ${feedback}
+  `;
+}
+
+function pickAnswer(letter) {
+  const s = state.session;
+  if (s.revealed) return;
+  s.selected = letter;
+  const q = s.questions[s.idx];
+  const isCorrect = letter === q.c;
+  const timeMs = Date.now() - s.qStart;
+  s.answers.push({ qId: q.id, selected: letter, correct: isCorrect, timeMs, q });
+  if (q.c) recordAnswer(q.id, isCorrect, timeMs);
+  if (s.isTest) {
+    setTimeout(() => nextQuestion(), 250);
+  } else {
+    s.revealed = true;
+    render();
+  }
+}
+
+function nextQuestion() {
+  const s = state.session;
+  if (s.idx === s.questions.length - 1) { finishQuiz(); return; }
+  s.idx += 1; s.selected = null; s.revealed = false; s.qStart = Date.now();
+  render();
+}
+
+function finishQuiz() {
+  const s = state.session;
+  if (s.timer) clearInterval(s.timer);
+  const correct = s.answers.filter(a => a.correct).length;
+  const session = {
+    ts: Date.now(), subject: s.subject, mode: s.mode,
+    total: s.answers.length, correct,
+    durationMs: Date.now() - s.startTs,
+    answers: s.answers,
+  };
+  recordSession(session);
+  state.session = null;
+  go({ name: "result", session });
+}
+
+// ============================================================
+// RESULT
+// ============================================================
+function renderResult(session) {
+  const info = SUBJECTS[session.subject];
+  const pct = session.total > 0 ? session.correct / session.total : 0;
+  const minutes = (session.durationMs / 60000).toFixed(1);
+  const avgSec = session.total > 0 ? (session.durationMs / 1000 / session.total).toFixed(1) : "0";
+  const verdict = pct >= 0.9 ? "Xuất sắc" : pct >= 0.7 ? "Khá tốt" : pct >= 0.5 ? "Cần ôn thêm" : "Hãy thử lại nhé";
+  
+  const rows = session.answers.map(a => {
+    const correctOpt = a.q.o.find(o => o[0] === a.q.c);
+    return `
+      <div class="detail-row">
+        <div class="detail-icon" style="background:${a.correct ? '#E4EDE9' : '#F4DDD5'};color:${a.correct ? '#2D5A4F' : '#B8552E'}">
+          ${a.correct ? "✓" : "✕"}
+        </div>
+        <div class="detail-text">
+          ${escapeHtml(a.q.q)}
+          ${!a.correct ? `<div class="detail-meta">Bạn chọn <b>${a.selected}</b> · Đáp án <b style="color:#2D5A4F">${a.q.c}</b> — ${escapeHtml(correctOpt ? correctOpt[1] : "")}</div>` : ""}
+        </div>
+        <div class="detail-time">${(a.timeMs/1000).toFixed(1)}s</div>
+      </div>
+    `;
+  }).join("");
+  
+  return `
+    <div class="result-hero">
+      <div class="result-eyebrow">Kết quả phiên luyện tập</div>
+      <div class="result-score" style="color:${info.color}">${session.correct}<span class="result-score-of"> / ${session.total}</span></div>
+      <div class="result-verdict">${verdict}</div>
+    </div>
+    <div class="overview-grid">
+      <div class="card"><div class="ov-label">Chính xác</div><div class="ov-value">${fmtPct(pct)}</div><div class="ov-sub" style="color:${info.color}">&nbsp;</div></div>
+      <div class="card"><div class="ov-label">Thời gian</div><div class="ov-value">${minutes}p</div><div class="ov-sub" style="color:#3D4F8C">&nbsp;</div></div>
+      <div class="card"><div class="ov-label">Trung bình</div><div class="ov-value">${avgSec}s</div><div class="ov-sub" style="color:#B8552E">mỗi câu</div></div>
+    </div>
+    <div class="card" style="margin-bottom:24px">
+      <h3 style="font-family:Fraunces,serif;font-size:20px;font-weight:600;margin-bottom:12px">Chi tiết</h3>
+      <div class="detail-list">${rows}</div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-primary" style="background:${info.color}" data-action="subject" data-subject="${session.subject}">Luyện tiếp →</button>
+      <button class="btn-ghost" data-action="home">Về trang chủ</button>
+    </div>
+  `;
+}
+
+// ============================================================
+// WEAK
+// ============================================================
+function renderWeak() {
+  const weak = weakQuestions(null);
+  if (weak.length === 0) {
+    return `<div class="empty-state"><h3>Chưa có câu sai</h3><p>Bạn chưa từng trả lời sai câu nào. Hãy luyện tập tiếp để khu vực này có nội dung!</p></div>`;
+  }
+  // Group by subject
+  const grouped = {};
+  weak.forEach(q => { (grouped[q.s] = grouped[q.s] || []).push(q); });
+  
+  let html = `
+    <div style="margin-bottom:28px">
+      <div class="result-eyebrow" style="color:#B8552E">Cần dò lại</div>
+      <h1 class="sh-title" style="margin:8px 0 8px">Khu vực câu hay sai</h1>
+      <p style="color:var(--soft-muted)">${weak.length} câu có tỷ lệ đúng dưới 60% hoặc lần gần nhất trả lời sai.</p>
+    </div>
+  `;
+  for (const subjKey of Object.keys(grouped)) {
+    const info = SUBJECTS[subjKey];
+    html += `<div class="section-title" style="margin-top:24px"><h2 style="color:${info.color}">${info.label}</h2><button class="btn-primary" style="background:${info.color};padding:7px 14px;font-size:13px" data-action="start-quiz" data-mode="weak" data-subject="${subjKey}">Luyện lại</button></div>`;
+    html += grouped[subjKey].map(q => {
+      const s = state.progress.qStats[q.id];
+      const ratio = s.correct / Math.max(1, s.correct + s.wrong);
+      const correctOpt = q.o.find(o => o[0] === q.c);
+      return `
+        <div class="list-row">
+          <span class="tag" style="background:${info.soft};color:${info.color};flex-shrink:0">${info.label}</span>
+          <div class="lr-info">
+            <div class="lr-meta">Đề ${q.e} · Câu ${q.eq}</div>
+            <div class="lr-q">${escapeHtml(q.q)}</div>
+            <div class="lr-stats" style="color:var(--muted)">Đáp án đúng: <b style="color:#2D5A4F">${q.c}</b> — ${escapeHtml(correctOpt ? correctOpt[1] : "")}</div>
+            <div class="lr-stats" style="color:#B8552E">${s.wrong} sai · ${s.correct} đúng · ${fmtPct(ratio)} chính xác</div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+  return html;
+}
+
+// ============================================================
+// STATS
+// ============================================================
+function renderStats() {
+  const h = state.progress.history;
+  return `
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px">
+      <div>
+        <div class="result-eyebrow" style="color:#3D4F8C">Tổng quan</div>
+        <h1 class="sh-title" style="margin:8px 0">Thống kê & Lịch sử</h1>
+      </div>
+      <button class="nav-link" style="color:#B8552E" data-action="reset">Đặt lại tiến trình</button>
+    </div>
+    ${h.length === 0 ? `<div class="empty-state"><p>Chưa có phiên luyện tập nào.</p></div>` :
+      h.map(item => {
+        const info = SUBJECTS[item.subject] || { label: item.subject, soft: "#eee", color: "#666" };
+        const modeLabel = (MODES.find(m => m.id === item.mode) || {}).label || item.mode;
+        return `
+          <div class="list-row" style="align-items:center">
+            <span class="tag" style="background:${info.soft};color:${info.color};flex-shrink:0">${info.label}</span>
+            <div class="lr-info">
+              <div style="font-size:14px">${modeLabel}</div>
+              <div class="lr-meta">${fmtTime(item.ts)}</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-family:Fraunces,serif;font-weight:600;font-size:18px;font-variant-numeric:tabular-nums">${item.correct}/${item.total}</div>
+              <div class="lr-meta">${(item.durationMs/60000).toFixed(1)}p</div>
+            </div>
+          </div>
+        `;
+      }).join("")
+    }
+  `;
+}
+
+// ============================================================
+// BOSS MODE
+// ============================================================
+function renderBossConfig(subjKey) {
+  const info = SUBJECTS[subjKey];
+  const target = state.bossTarget || 5;
+  return `
+    <div class="modal-overlay" data-action="dismiss-boss">
+      <div class="modal" onclick="event.stopPropagation()">
+        <h3>Boss Mode · ${info.label}</h3>
+        <p>Trả lời đúng <b>N</b> câu liên tiếp để thắng. Sai sẽ reset streak và mất 1 mạng. Có <b>3 mạng</b>.</p>
+        <div class="boss-config">
+          ${[5, 10, 15].map(n => `
+            <button class="boss-opt${n===target?' active':''}" data-action="boss-target" data-n="${n}">
+              ${n}<span class="boss-opt-label">câu liên tiếp</span>
+            </button>
+          `).join("")}
+        </div>
+        <div class="modal-actions">
+          <button class="btn-ghost" data-action="home">Huỷ</button>
+          <button class="btn-primary" style="background:${info.color}" data-action="boss-start" data-subject="${subjKey}">Vào Boss →</button>
+        </div>
+      </div>
+    </div>
+    ${renderSubject(subjKey)}
+  `;
+}
+
+function startBoss(subject) {
+  const target = state.bossTarget || 5;
+  const questions = shuffle(answerableQuestions(subject));
+  if (questions.length === 0) { alert("Không đủ câu cho môn này."); return; }
+  state.boss = {
+    subject, target,
+    streak: 0, bestStreak: 0,
+    lives: 3, idx: 0,
+    questions, qStart: Date.now(), startTs: Date.now(),
+    selected: null, revealed: false,
+    history: [],
+    finished: false, won: false,
+  };
+  go({ name: "boss-stage" });
+}
+
+function renderBossStage() {
+  const b = state.boss;
+  const info = SUBJECTS[b.subject];
+  
+  if (b.finished) {
+    const minutes = ((Date.now() - b.startTs) / 60000).toFixed(1);
+    return `
+      <div class="boss-stage">
+        <div class="result-eyebrow" style="color:${b.won ? '#2D5A4F' : '#B8552E'}">${b.won ? 'CHIẾN THẮNG' : 'HẾT MẠNG'}</div>
+        <div class="boss-streak" style="color:${b.won ? '#2D5A4F' : '#B8552E'}">${b.won ? '🏆' : '💀'}</div>
+        <div class="result-verdict" style="margin-top:8px">${b.won ? `Trả lời đúng ${b.target} câu liên tiếp!` : `Streak cao nhất: ${b.bestStreak}/${b.target}`}</div>
+      </div>
+      <div class="overview-grid">
+        <div class="card"><div class="ov-label">Streak cao nhất</div><div class="ov-value">${b.bestStreak}<span style="color:var(--muted);font-size:0.4em;font-weight:400"> / ${b.target}</span></div></div>
+        <div class="card"><div class="ov-label">Mạng còn</div><div class="ov-value">${b.lives}<span style="color:var(--muted);font-size:0.4em;font-weight:400"> / 3</span></div></div>
+        <div class="card"><div class="ov-label">Thời gian</div><div class="ov-value">${minutes}p</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <button class="btn-primary" style="background:${info.color}" data-action="boss-config" data-subject="${b.subject}">Chơi lại →</button>
+        <button class="btn-ghost" data-action="home">Về trang chủ</button>
+      </div>
+    `;
+  }
+  
+  const q = b.questions[b.idx];
+  const optsHtml = q.o.map(o => {
+    const [letter, text, note] = o;
+    let cls = "option";
+    if (b.revealed) {
+      if (letter === q.c) cls += " correct";
+      else if (letter === b.selected) cls += " wrong";
+      else cls += " dim";
+    }
+    const mark = b.revealed ? (letter === q.c ? "✓" : (letter === b.selected ? "✕" : "")) : "";
+    return `
+      <button class="${cls}" data-action="boss-pick" data-letter="${letter}" ${b.revealed ? "disabled" : ""}>
+        <div class="option-letter">${letter}</div>
+        <div class="option-text">${escapeHtml(text)}${note ? `<div class="option-note">(${escapeHtml(note)})</div>` : ""}</div>
+        ${mark ? `<div class="option-mark">${mark}</div>` : ""}
+      </button>
+    `;
+  }).join("");
+  
+  let feedback = "";
+  if (b.revealed) {
+    const isCorrect = b.selected === q.c;
+    const correctOpt = q.o.find(o => o[0] === q.c);
+    feedback = `
+      <div class="feedback">
+        <div class="feedback-text">
+          <div class="feedback-title" style="color:${isCorrect ? '#2D5A4F' : '#B8552E'}">${isCorrect ? `Streak: ${b.streak}!` : "Reset streak. Mất 1 mạng!"}</div>
+          ${!isCorrect ? `<div class="feedback-sub">Đáp án đúng: <b>${q.c}</b>. ${escapeHtml(correctOpt ? correctOpt[1] : "")}</div>` : ""}
+        </div>
+        <button class="btn-primary" style="background:${info.color}" data-action="boss-next">Tiếp →</button>
+      </div>
+    `;
+  }
+  
+  const hearts = [1,2,3].map(i => `<span class="boss-heart${i > b.lives ? ' lost' : ''}">${i > b.lives ? '🤍' : '❤️'}</span>`).join("");
+  
+  return `
+    <div class="boss-stage">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span class="tag" style="background:${info.soft};color:${info.color}">${info.label} · Boss Mode</span>
+        <button class="nav-link" data-action="exit-boss">Thoát</button>
+      </div>
+      <div class="boss-streak" style="color:${info.color}">${b.streak}<span style="font-size:0.4em;color:var(--muted)"> / ${b.target}</span></div>
+      <div class="boss-streak-label">Câu đúng liên tiếp</div>
+      <div class="boss-lives">${hearts}</div>
+    </div>
+    <div class="question-card" style="margin-top:24px">
+      <div class="q-eyebrow">Đề ${q.e} · Câu ${q.eq}</div>
+      <div class="q-text">${escapeHtml(q.q)}</div>
+      ${q.img ? `<div class="q-image-desc" style="background:${info.soft};color:${info.color}">📷 ${escapeHtml(q.img)}</div>` : ""}
+      <a class="img-search-btn" href="${imgSearchUrl(q)}" target="_blank" rel="noopener">
+        <span>🔍</span> Xem hình minh hoạ trên Google
+      </a>
+    </div>
+    <div class="options-grid">${optsHtml}</div>
+    ${feedback}
+  `;
+}
+
+function bossPick(letter) {
+  const b = state.boss;
+  if (b.revealed) return;
+  b.selected = letter;
+  b.revealed = true;
+  const q = b.questions[b.idx];
+  const isCorrect = letter === q.c;
+  const timeMs = Date.now() - b.qStart;
+  if (q.c) recordAnswer(q.id, isCorrect, timeMs);
+  if (isCorrect) {
+    b.streak += 1;
+    if (b.streak > b.bestStreak) b.bestStreak = b.streak;
+    if (b.streak >= b.target) { b.finished = true; b.won = true; }
+  } else {
+    b.streak = 0;
+    b.lives -= 1;
+    if (b.lives <= 0) { b.finished = true; b.won = false; }
+  }
+  render();
+}
+
+function bossNext() {
+  const b = state.boss;
+  if (b.finished) return;
+  b.idx = (b.idx + 1) % b.questions.length;
+  b.selected = null; b.revealed = false; b.qStart = Date.now();
+  render();
+}
+
+// ============================================================
+// FLASHCARDS
+// ============================================================
+function renderFlashcardHome() {
+  // Group by topic
+  const byTopic = {};
+  for (const f of FLASHCARDS) {
+    (byTopic[f.topic] = byTopic[f.topic] || []).push(f);
+  }
+  const topics = Object.entries(byTopic).map(([topic, cards]) => {
+    const subj = cards[0].subject;
+    const info = SUBJECTS[subj];
+    let seen = 0, learned = 0, dueNow = 0;
+    const now = Date.now();
+    cards.forEach(c => {
+      const st = state.progress.fcStats[c.id];
+      if (st) {
+        seen++;
+        if (st.interval >= 7) learned++;
+        if (!st.dueAt || st.dueAt <= now) dueNow++;
+      } else dueNow++;
+    });
+    return { topic, cards, subj, info, seen, learned, dueNow };
+  });
+  
+  return `
+    <div style="margin-bottom:28px">
+      <div class="result-eyebrow" style="color:#9B6B1E">Vocabulary</div>
+      <h1 class="sh-title" style="margin:8px 0">Flashcard từ vựng</h1>
+      <p style="color:var(--soft-muted)">${FLASHCARDS.length} từ vựng theo 8 chủ đề từ Đề 6-9. Lật thẻ, tự đánh giá độ thuộc, tự lên lịch ôn.</p>
+    </div>
+    <div class="fc-topic-grid">
+      ${topics.map(t => `
+        <button class="card lift fc-topic" data-action="fc-topic" data-topic="${escapeHtml(t.topic)}">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+            <div class="sc-icon" style="background:${t.info.soft};color:${t.info.color}">${t.info.icon}</div>
+            ${t.dueNow > 0 ? `<span class="mode-badge" style="background:${t.info.soft};color:${t.info.color}">${t.dueNow} đến hạn</span>` : ""}
+          </div>
+          <div class="fc-topic-title">${escapeHtml(t.topic)}</div>
+          <div class="fc-topic-meta">${t.cards.length} từ · ${t.seen} đã thấy · ${t.learned} thuộc</div>
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function startFlashcardTopic(topic) {
+  const cards = FLASHCARDS.filter(f => f.topic === topic);
+  // Priority: due first, then unseen, then others
+  const now = Date.now();
+  const due = [], unseen = [], rest = [];
+  for (const c of cards) {
+    const st = state.progress.fcStats[c.id];
+    if (!st) unseen.push(c);
+    else if (!st.dueAt || st.dueAt <= now) due.push(c);
+    else rest.push(c);
+  }
+  const queue = [...shuffle(due), ...shuffle(unseen), ...shuffle(rest)];
+  state.fcSession = {
+    topic, queue, idx: 0, side: "front", direction: "en2vi",
+  };
+  go({ name: "flashcard-stage" });
+}
+
+function renderFlashcardStage() {
+  const s = state.fcSession;
+  if (!s || s.idx >= s.queue.length) {
+    return `
+      <div class="empty-state">
+        <h3>Hoàn thành phiên</h3>
+        <p>Đã xem hết flashcard trong chủ đề này. Hẹn gặp lại theo lịch SRS!</p>
+        <button class="btn-primary" style="background:#9B6B1E" data-action="flashcard">← Trở về danh sách chủ đề</button>
+      </div>
+    `;
+  }
+  const card = s.queue[s.idx];
+  const info = SUBJECTS[card.subject];
+  const showFront = s.side === "front";
+  const front = s.direction === "en2vi" ? card.en : card.vi;
+  const back = s.direction === "en2vi" ? card.vi : card.en;
+  
+  return `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <span class="tag" style="background:${info.soft};color:${info.color}">${escapeHtml(card.topic)}</span>
+      <div style="display:flex;gap:16px;align-items:center">
+        <span class="quiz-counter">${s.idx+1}/${s.queue.length}</span>
+        <button class="nav-link" data-action="fc-flip-direction">${s.direction === "en2vi" ? "Anh → Việt" : "Việt → Anh"}</button>
+        <button class="nav-link" data-action="flashcard">Thoát</button>
+      </div>
+    </div>
+    <div class="fc-card" data-action="fc-flip">
+      <div class="${showFront ? 'fc-front' : 'fc-back'}">${escapeHtml(showFront ? front : back)}</div>
+      <div class="fc-hint">${showFront ? 'Bấm để lật' : 'Đánh giá độ thuộc'}</div>
+    </div>
+    <div style="text-align:center;margin-top:-8px;margin-bottom:8px">
+      <a class="img-search-btn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(card.en)}" target="_blank" rel="noopener">
+        <span>🔍</span> Hình ảnh "${escapeHtml(card.en)}"
+      </a>
+    </div>
+    ${!showFront ? `
+      <div class="fc-rate">
+        <button class="fc-rate-btn" style="border-color:#B8552E;color:#B8552E" data-action="fc-rate" data-rating="again">Lại từ đầu<br><small>< 1 ngày</small></button>
+        <button class="fc-rate-btn" style="border-color:#9B6B1E;color:#9B6B1E" data-action="fc-rate" data-rating="hard">Khó<br><small>~1-2 ngày</small></button>
+        <button class="fc-rate-btn" style="border-color:#3D4F8C;color:#3D4F8C" data-action="fc-rate" data-rating="good">Ổn<br><small>~3-5 ngày</small></button>
+        <button class="fc-rate-btn" style="border-color:#2D5A4F;color:#2D5A4F" data-action="fc-rate" data-rating="easy">Dễ<br><small>~7-14 ngày</small></button>
+      </div>
+    ` : ""}
+  `;
+}
+
+function fcFlip() {
+  if (!state.fcSession) return;
+  state.fcSession.side = state.fcSession.side === "front" ? "back" : "front";
+  render();
+}
+
+function fcRate(rating) {
+  const s = state.fcSession;
+  const card = s.queue[s.idx];
+  recordFlashcard(card.id, rating);
+  s.idx += 1;
+  s.side = "front";
+  render();
+}
+
+// ============================================================
+// EVENTS
+// ============================================================
+function bindEvents() {
+  document.querySelectorAll("[data-action]").forEach(el => {
+    el.addEventListener("click", e => {
+      const a = el.getAttribute("data-action");
+      const subj = el.getAttribute("data-subject");
+      const mode = el.getAttribute("data-mode");
+      
+      if (a === "subject") go({ name: "subject", subject: subj });
+      else if (a === "start-quiz") startQuiz(mode, subj);
+      else if (a === "boss-config") { state.bossTarget = 5; go({ name: "boss-config", subject: subj }); }
+      else if (a === "boss-target") { state.bossTarget = parseInt(el.getAttribute("data-n")); render(); }
+      else if (a === "boss-start") startBoss(subj);
+      else if (a === "boss-pick") bossPick(el.getAttribute("data-letter"));
+      else if (a === "boss-next") bossNext();
+      else if (a === "exit-boss") { if (confirm("Thoát Boss Mode? Tiến trình streak sẽ mất.")) go({ name: "home" }); }
+      else if (a === "dismiss-boss") go({ name: "subject", subject: state.view.subject });
+      else if (a === "pick") pickAnswer(el.getAttribute("data-letter"));
+      else if (a === "next-q") nextQuestion();
+      else if (a === "exit-quiz") { if (confirm("Thoát phiên luyện tập?")) { if (state.session?.timer) clearInterval(state.session.timer); go({ name: "home" }); } }
+      else if (a === "weak") go({ name: "weak" });
+      else if (a === "stats") go({ name: "stats" });
+      else if (a === "flashcard") go({ name: "flashcard-home" });
+      else if (a === "fc-topic") startFlashcardTopic(el.getAttribute("data-topic"));
+      else if (a === "fc-flip") fcFlip();
+      else if (a === "fc-flip-direction") { state.fcSession.direction = state.fcSession.direction === "en2vi" ? "vi2en" : "en2vi"; state.fcSession.side = "front"; render(); }
+      else if (a === "fc-rate") fcRate(el.getAttribute("data-rating"));
+      else if (a === "home") go({ name: "home" });
+      else if (a === "random") startRandomMix();
+      else if (a === "reset") { if (confirm("Xoá toàn bộ tiến trình? Hành động này không thể hoàn tác.")) resetAll(); }
+    });
+  });
+}
+
+function startRandomMix() {
+  const pool = QUESTIONS.filter(q => q.c);
+  const picked = shuffle(pool).slice(0, 10);
+  if (picked.length === 0) return;
+  // determine dominant subject for color
+  state.session = {
+    mode: "practice", subject: picked[0].s,
+    questions: picked, idx: 0, selected: null, revealed: false,
+    answers: [], startTs: Date.now(), qStart: Date.now(),
+    isTest: false, timeLeft: null, timer: null,
+  };
+  go({ name: "quiz" });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadProgress();
+document.getElementById("home-link").addEventListener("click", () => go({ name: "home" }));
+document.getElementById("back-link").addEventListener("click", () => go({ name: "home" }));
+render();
+</script>
+</body>
+</html>
